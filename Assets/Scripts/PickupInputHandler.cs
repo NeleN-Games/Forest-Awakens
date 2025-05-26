@@ -4,7 +4,7 @@ public class PickupInputHandler : MonoBehaviour
 {
     private PlayerInventory _inventory;
     public float pickupRange = 1.5f;
-    public string collectableTag = "Collectable";
+    private const string CollectableTag = "Collectable";
     private readonly Collider2D[] _results = new Collider2D[10]; 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class PickupInputHandler : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             var hit = _results[i];
-            if (!hit.CompareTag(collectableTag)) continue;
+            if (!hit.CompareTag(CollectableTag)) continue;
 
             var collectable = hit.GetComponent<Collectable>();
             if (collectable == null) continue;
@@ -39,7 +39,7 @@ public class PickupInputHandler : MonoBehaviour
             int size = Physics2D.OverlapCircleNonAlloc(transform.position, pickupRange, _results);
             for (int i = 0; i < size; i++)
             {
-                if (!_results[i].CompareTag(collectableTag)) continue;
+                if (!_results[i].CompareTag(CollectableTag)) continue;
                 hasCollectableNearby = true;
                 break;
             }
