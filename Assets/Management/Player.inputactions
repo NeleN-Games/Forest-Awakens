@@ -72,6 +72,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Gameplay",
+            "id": "fa63ce1f-b072-4ef0-9a7a-ddf12cb0a634",
+            "actions": [
+                {
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "434c2530-b25e-4d12-88b6-49cf2f973e37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4c4dc9d0-279f-45ce-ba9c-91d5a2ca9607",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
