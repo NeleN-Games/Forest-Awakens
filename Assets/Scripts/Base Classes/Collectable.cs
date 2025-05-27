@@ -17,7 +17,6 @@ public abstract class Collectable : MonoBehaviour
       if (_isCollected) return;
       
       _isCollected = true;
-      playerInventory.AddItem(itemType); 
       Destroy(gameObject);
    }
 
