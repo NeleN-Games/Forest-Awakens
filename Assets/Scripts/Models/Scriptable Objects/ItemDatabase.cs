@@ -1,15 +1,7 @@
 using System.Collections.Generic;
 using Enums;
+using Models.Data;
 using UnityEngine;
-
-[System.Serializable]
-public class ItemData
-{
-    public ItemType type;
-    public string itemName;
-    public Sprite icon;
-    public Color color;
-}
 
 [CreateAssetMenu(menuName = "Database/ItemDatabase")]
 public class ItemDatabase : ScriptableObject
@@ -29,6 +21,10 @@ public class ItemDatabase : ScriptableObject
 
     public static ItemData GetItem(ItemType type)
     {
-        return _itemDict[type];
+        if (_itemDict[type].IsValid()) return _itemDict[type];
+        
+        Debug.LogError($"Item of type {type} has missing or invalid data!");
+        return null;
+
     }
 }

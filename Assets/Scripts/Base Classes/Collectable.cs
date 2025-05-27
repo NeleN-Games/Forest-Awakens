@@ -13,32 +13,32 @@ namespace Base_Classes
       
       [SerializeField]
       protected bool isTriggerable;
-      private bool _isCollected;
+      protected bool IsCollected;
       private Collider2D _collider;
       public virtual void OnCollect(GameObject collector)
       {
          collector.TryGetComponent(out PlayerInventory playerInventory);
-         if (_isCollected) return;
+         if (IsCollected) return;
          playerInventory.AddItem(itemType);
-         _isCollected = true;
+         IsCollected = true;
          Destroy(gameObject);
       }
 
-      private void Awake()
+      protected virtual void Awake()
       {
          gameObject.tag = "Collectable";
          _collider = GetComponent<Collider2D>();
          _collider.isTrigger = isTriggerable;
       }
 
-      private void OnEnable()
+      protected virtual void OnEnable()
       {
-         _isCollected = false;
+         IsCollected = false;
       }
 
-      private void OnDisable()
+      protected virtual void OnDisable()
       {
-         _isCollected = true;
+         IsCollected = true;
       }
 
       public ItemType GetItemType()

@@ -1,6 +1,6 @@
 using Base_Classes;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.InputSystem;
 
 public class PickupInputHandler : MonoBehaviour
 {
@@ -8,9 +8,33 @@ public class PickupInputHandler : MonoBehaviour
     private PlayerInventory inventory;
     public float pickupRange = 1.5f;
     private const string CollectableTag = "Collectable";
-    private readonly Collider2D[] _results = new Collider2D[10]; 
+    private readonly Collider2D[] _results = new Collider2D[5]; 
 
-    public void OnPickup()
+    private bool _isPickupHeld;
+    private SourceCollectable _currentSourceCollectable;
+    public void OnPickup(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _isPickupHeld = true;
+        }
+        else if (context.canceled)
+        {
+            _isPickupHeld = false;
+        }
+    }
+    private void Update()
+    {
+        if (_isPickupHeld)
+        {
+            CheckPickup();
+        }
+        else if (_currentSourceCollectable is not null)
+        {
+            _currentSourceCollectable.RequestStopCollecting();
+        }
+    }
+    private void CheckPickup()
     {
         int size = Physics2D.OverlapCircleNonAlloc(transform.position, pickupRange, _results);
 
@@ -18,16 +42,22 @@ public class PickupInputHandler : MonoBehaviour
         {
             var hit = _results[i];
             if (!hit.CompareTag(CollectableTag)) continue;
-
-            var collectable = hit.GetComponent<Collectable>();
-            if (collectable == null) continue;
             
+            if (!hit.TryGetComponent<Collectable>(out var collectable)) continue;
+            
+            if (collectable is SourceCollectable sourceCollectable)
+            {
+                _currentSourceCollectable = sourceCollectable;
+            }
+            else
+            {
+                _currentSourceCollectable = null;
+            }
             collectable.OnCollect(gameObject);
-            Debug.Log("Picked up " + collectable.GetItemType());
             return;
         }
-        Debug.LogWarning("No collectable item found");
     }
+    
     private void OnDrawGizmosSelected()
     {
         bool hasCollectableNearby = false;
@@ -43,7 +73,9 @@ public class PickupInputHandler : MonoBehaviour
             }
         }
 
-        Gizmos.color = hasCollectableNearby ? Color.green : Color.white;
+        Gizmos.color = hasCollectableNearby ?
+            (_currentSourceCollectable?Color.blue :Color.green )
+            : Color.white;
         Gizmos.DrawWireSphere(transform.position, pickupRange);
     }
 
