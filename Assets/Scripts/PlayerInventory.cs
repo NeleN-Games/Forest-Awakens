@@ -15,8 +15,7 @@ public class PlayerInventory : MonoBehaviour
     }
     public void AddItem(ItemType type)
     {
-        if (_inventory.TryAdd(type, 0)) return;
-        
+        _inventory.TryAdd(type, 0);
         _inventory[type] += 1;
         Debug.Log(type + $" added to Inventory, You have : {_inventory[type] }");
         OnInventoryChanged?.Invoke(_inventory);

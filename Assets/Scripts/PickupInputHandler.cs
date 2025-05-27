@@ -1,15 +1,14 @@
+using Base_Classes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PickupInputHandler : MonoBehaviour
 {
-    private PlayerInventory _inventory;
+    [SerializeField]
+    private PlayerInventory inventory;
     public float pickupRange = 1.5f;
     private const string CollectableTag = "Collectable";
     private readonly Collider2D[] _results = new Collider2D[10]; 
-    private void Awake()
-    {
-        _inventory=PlayerInventory.Instance;
-    }
 
     public void OnPickup()
     {
@@ -22,8 +21,7 @@ public class PickupInputHandler : MonoBehaviour
 
             var collectable = hit.GetComponent<Collectable>();
             if (collectable == null) continue;
-
-            _inventory.AddItem(collectable.GetItemType());
+            
             collectable.OnCollect(gameObject);
             Debug.Log("Picked up " + collectable.GetItemType());
             return;

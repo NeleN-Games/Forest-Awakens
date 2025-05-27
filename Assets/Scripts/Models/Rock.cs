@@ -1,8 +1,11 @@
+using Base_Classes;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Models
 {
-   public class Rock : Collectable
-   {
-      
-   }
+    public class Rock : Collectable
+    {
+        
+    }
 }

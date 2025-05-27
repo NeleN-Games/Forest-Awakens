@@ -15,6 +15,7 @@ public class InventorySlotUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHa
     {
         _itemType = type;
         icon.sprite = ItemDatabase.GetItem(type).icon;
+        icon.color = ItemDatabase.GetItem(type).color;
         countText.text = count.ToString();
     }
 

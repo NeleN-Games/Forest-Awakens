@@ -15,7 +15,9 @@ MonoBehaviour:
   items:
   - type: 0
     itemName: Rock !
-    icon: {fileID: 1526912620, guid: 36e2acc159cd4934ea6668369e8abbdf, type: 3}
+    icon: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    color: {r: 0.7254902, g: 0.7137255, b: 0.6627451, a: 1}
   - type: 1
     itemName: Wood
-    icon: {fileID: 21300000, guid: af100efcb711d1e439b7854c451fc928, type: 3}
+    icon: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    color: {r: 0.5372549, g: 0.28627452, b: 0.14901961, a: 1}

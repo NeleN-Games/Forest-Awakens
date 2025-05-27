@@ -8,6 +8,7 @@ public class ItemData
     public ItemType type;
     public string itemName;
     public Sprite icon;
+    public Color color;
 }
 
 [CreateAssetMenu(menuName = "Database/ItemDatabase")]
