@@ -39,13 +39,6 @@ This project is open-source under the [MIT License](LICENSE).
 
 ---
 
-## 🤝 Notes
-
-This prototype is intended for **learning and demonstration purposes**.  
-If you're interested in the code, feel free to explore — but please **do not reuse or publish without credit**.
-
----
-
 ⚠️ This project is part of my personal portfolio and is shared for review purposes only.  
 ❌ Please do not reuse, fork, or redistribute any part of this code without explicit permission.  
 📫 Feel free to contact me if you'd like to collaborate or learn more.
