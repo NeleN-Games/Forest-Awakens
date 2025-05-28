@@ -1,24 +1,49 @@
-# Unity 2D Survival Game Prototype
+# 🧱 Unity 2D Survival Game Prototype
 
-This is a one-week solo challenge to build a prototype of a 2D top-down survival game using Unity. The goal is to showcase gameplay programming skills and game architecture design without relying on complex graphics or networking.
+A **solo one-week prototype** of a 2D top-down survival game made in **Unity**. This project is designed to demonstrate **gameplay programming**, **game architecture**, and **clean code practices**, without relying on complex assets or networking.
 
-## 🚀 Features (WIP)
-- Top-down movement with camera follow
-- Resource gathering (wood, stone)
-- Inventory system
-- Simple enemy AI
-- Day/Night cycle
-- Health, hunger, and energy bars
+---
 
-> All visuals are placeholder (shapes). The focus is on mechanics and structure.
+## 🚀 Features (Work-in-Progress)
 
-## 🎮 Goal
-Survive as long as possible by gathering resources, avoiding enemies, and managing your character's needs.
+- 🧭 Top-down player movement + camera follow
+- 🪓 Resource gathering (wood, stone)
+- 🎒 Basic inventory system
+- 👾 Simple enemy AI (chase & patrol)
+- 🌗 Dynamic day/night cycle
+- ❤️ Health, ⚡ Energy, and 🍗 Hunger bars
 
-## ⚙️ Tools
-- Unity 2022+
-- C#
-- Git for version control
+- 🚧 More exciting features coming soon!
+
+> 🎨 All visuals are placeholder shapes. Focus is on code, mechanics, and architecture.
+
+---
+
+## 🎯 Objective
+
+Survive as long as possible by gathering resources, managing your needs, and avoiding enemies.
+
+---
+
+## 🛠️ Tools & Tech
+
+- **Unity** 2022 or newer  
+- **C#**  
+- **Git** for version control
+
+---
 
 ## 📜 License
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+This project is open-source under the [MIT License](LICENSE).
+
+---
+
+⚠️ This project is part of my personal portfolio and is shared for review purposes only.  
+❌ Please do not reuse, fork, or redistribute any part of this code without explicit permission.  
+📫 Feel free to contact me if you'd like to collaborate or learn more.
+
+---
+
+*Thank you for checking out my project! 🙏*
+
