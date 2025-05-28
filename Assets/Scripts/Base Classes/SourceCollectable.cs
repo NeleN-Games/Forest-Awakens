@@ -105,7 +105,7 @@ namespace Base_Classes
         /// <summary>
         /// Finalizes the collection process and destroys the resource object.
         /// </summary>
-        public void FinalizeCollection()
+        private void FinalizeCollection()
         {
             IsCollecting = false;
             IsCollected = true;
@@ -120,7 +120,6 @@ namespace Base_Classes
             if (ResourcePrefab != null)
             {
                 _randomPosition = Random.insideUnitCircle * 3;
-                Debug.LogWarning("creating resource prefab");
                 Instantiate(ResourcePrefab, (Vector2)transform.position + _randomPosition, Quaternion.identity);
                 _producedCount++;
             }
