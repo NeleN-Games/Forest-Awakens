@@ -1,8 +1,6 @@
 using Base_Classes;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace Models
+namespace Items.Sources
 {
     public class Wood : Collectable
     {
