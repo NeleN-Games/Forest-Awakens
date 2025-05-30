@@ -8,8 +8,8 @@ namespace Base_Classes
     /// <summary>
     /// Handles the logic for collecting a resource, spawning output, and managing visual state based on health.
     /// </summary>
-    [RequireComponent(typeof(SourceHealth))]
-    public class SourceCollectable : Collectable
+    [RequireComponent(typeof(ResourceCapacity))]
+    public class HarvestableSource : Collectable
     {
         /// <summary>
         /// Total time it takes to fully collect the resource.
@@ -47,7 +47,7 @@ namespace Base_Classes
         public bool IsCollecting { get; private set; }
 
         private Vector2 _randomPosition;
-        private SourceHealth _sourceHealth;
+        private ResourceCapacity resourceCapacity;
 
         /// <summary>
         /// Called when the object is initialized. Sets extract ratios and hooks events.
@@ -55,8 +55,8 @@ namespace Base_Classes
         protected override void Awake()
         {
             base.Awake();
-            _sourceHealth = GetComponent<SourceHealth>();
-            _sourceHealth.OnDepleted += FinalizeCollection;
+            resourceCapacity = GetComponent<ResourceCapacity>();
+            resourceCapacity.OnDepleted += FinalizeCollection;
             SetExtractRatios();
         }
 
@@ -65,11 +65,11 @@ namespace Base_Classes
         /// </summary>
         private void SetExtractRatios()
         {
-            var maxHealth = _sourceHealth.MaxHealth;
+            var maxHealth = resourceCapacity.MaxHealth;
             _sourceExtractSteps = maxHealth / sourceAmount;
 
-            _sourceHealth.SetDecreaseRatio(fullTimeToCollect);
-            _sourceHealth.SetExtractionParameters(_sourceExtractSteps, sourceAmount);
+            resourceCapacity.SetDecreaseRatio(fullTimeToCollect);
+            resourceCapacity.SetExtractionParameters(_sourceExtractSteps, sourceAmount);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Base_Classes
             if (IsCollected) return;
 
             IsCollecting = true;
-            _sourceHealth.DecreaseHealth(_producedCount);
+            resourceCapacity.DecreaseHealth(_producedCount);
         }
 
         /// <summary>

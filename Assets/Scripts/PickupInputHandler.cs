@@ -11,7 +11,7 @@ public class PickupInputHandler : MonoBehaviour
     private readonly Collider2D[] _results = new Collider2D[5]; 
 
     private bool _isPickupHeld;
-    private SourceCollectable _currentSourceCollectable;
+    private HarvestableSource currentHarvestableSource;
     public void OnPickup(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -29,9 +29,9 @@ public class PickupInputHandler : MonoBehaviour
         {
             CheckPickup();
         }
-        else if (_currentSourceCollectable is not null)
+        else if (currentHarvestableSource is not null)
         {
-            _currentSourceCollectable.RequestStopCollecting();
+            currentHarvestableSource.RequestStopCollecting();
         }
     }
     private void CheckPickup()
@@ -45,13 +45,13 @@ public class PickupInputHandler : MonoBehaviour
             
             if (!hit.TryGetComponent<Collectable>(out var collectable)) continue;
             
-            if (collectable is SourceCollectable sourceCollectable)
+            if (collectable is HarvestableSource sourceCollectable)
             {
-                _currentSourceCollectable = sourceCollectable;
+                currentHarvestableSource = sourceCollectable;
             }
             else
             {
-                _currentSourceCollectable = null;
+                currentHarvestableSource = null;
             }
             collectable.OnCollect(gameObject);
             return;
@@ -74,7 +74,7 @@ public class PickupInputHandler : MonoBehaviour
         }
 
         Gizmos.color = hasCollectableNearby ?
-            (_currentSourceCollectable?Color.blue :Color.green )
+            (currentHarvestableSource?Color.blue :Color.green )
             : Color.white;
         Gizmos.DrawWireSphere(transform.position, pickupRange);
     }

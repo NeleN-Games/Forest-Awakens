@@ -8,8 +8,8 @@ namespace Models
     /// <summary>
     /// Manages the health of a resource and triggers visual updates or events when depleted or health state changes.
     /// </summary>
-    [RequireComponent(typeof(SourceCollectable))]
-    public class SourceHealth : MonoBehaviour
+    [RequireComponent(typeof(HarvestableSource))]
+    public class ResourceCapacity : MonoBehaviour
     {
         /// <summary>
         /// Maximum health value for the resource.
@@ -22,7 +22,7 @@ namespace Models
         public float MaxHealth => maxHealth;
 
         private float _decreaseHealthRate;
-        private SourceCollectable _sourceCollectable;
+        private HarvestableSource harvestableSource;
         private float _sourceExtractSteps;
         private float _sourceAmount;
 
@@ -70,7 +70,7 @@ namespace Models
         public void Awake()
         {
             _healthState = HealthState.Full;
-            _sourceCollectable = GetComponent<SourceCollectable>();
+            harvestableSource = GetComponent<HarvestableSource>();
             SetHealth();
         }
 
@@ -95,7 +95,7 @@ namespace Models
 
             if (!(CurrentHealth <= nextExtractStep) || producedCount >= _sourceAmount) return;
 
-            _sourceCollectable.CheckExtractSource();
+            harvestableSource.CheckExtractSource();
 
             if (CurrentHealth <= 0)
             {
@@ -129,7 +129,7 @@ namespace Models
         /// <param name="healthState">The new health state.</param>
         private void OnHealthStateChanged(HealthState healthState)
         {
-            _sourceCollectable.RequestUpdateVisualState(healthState);
+            harvestableSource.RequestUpdateVisualState(healthState);
         }
 
         /// <summary>

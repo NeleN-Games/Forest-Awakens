@@ -2,7 +2,7 @@ using Base_Classes;
 
 namespace Models
 {
-    public class StoneSource : SourceCollectable
+    public class StoneResource : HarvestableSource
     {
         protected override void UpdateVisualLowState()
         {
