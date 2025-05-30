@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Enums;
+using Models.Scriptable_Objects;
 using TMPro;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace UI
         public GameObject slotPrefab;
         public Transform slotParent;
         [SerializeField] private TextMeshProUGUI tooltipText;
-        [SerializeField] private ItemDatabase itemDatabase;
+        [SerializeField] private SourceDatabase sourceDatabase;
 
         private readonly Dictionary<ItemType, InventorySlotUI> _slots = new();
 
@@ -34,7 +35,7 @@ namespace UI
             PlayerInventory.Instance.OnInventoryChanged += RefreshInventory;
             RefreshInventory(PlayerInventory.Instance.GetInventory());
             _cashedPanelPosition = new Vector2(-panel.rect.width, 0);
-            ItemDatabase.Initialize(itemDatabase);
+            SourceDatabase.Initialize(sourceDatabase);
         }
 
         private void OnDisable()

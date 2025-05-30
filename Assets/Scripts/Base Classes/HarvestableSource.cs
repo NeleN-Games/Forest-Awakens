@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Enums;
 using Models;
+using Models.Scriptable_Objects;
 using UnityEngine;
 
 namespace Base_Classes
@@ -32,7 +33,7 @@ namespace Base_Classes
             {
                 if (_resourcePrefab == null)
                 {
-                    _resourcePrefab = ItemDatabase.GetItem(itemType).prefab;
+                    _resourcePrefab = SourceDatabase.GetSource(itemType).prefab;
                 }
                 return _resourcePrefab;
             }
