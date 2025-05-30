@@ -1,0 +1,5761 @@
+[
+  {
+    "id": 1,
+    "name": "Automation Tech 0",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Alloy": 6,
+      "Raw Metal": 10,
+      "Crystal": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 2,
+    "name": "Biology & Life Sciences Tech 1",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Metal Scrap": 2,
+      "Bio Tissue": 8,
+      "Unstable Energy": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 3,
+    "name": "Transportation Tech 2",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Wiring Kit": 5,
+      "Crystal": 5,
+      "Refined Metal": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 4,
+    "name": "Transportation Tech 3",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Plastic": 1,
+      "Food": 9,
+      "Crystal": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 5,
+    "name": "Transportation Tech 4",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Metal Scrap": 7,
+      "Wood Plank": 10,
+      "Control System": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 6,
+    "name": "Recycling & Environment Tech 5",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Copper Wire": 3,
+      "Organic Matter": 6,
+      "Refined Alloy": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 7,
+    "name": "Automation Tech 6",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Unstable Energy": 2,
+      "Living Cell": 1,
+      "Medicinal Plant": 1
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 5"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Exploration & Research Tech 7",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Control System": 6,
+      "Seed": 6,
+      "Stone": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 9,
+    "name": "Health & Hygiene Tech 8",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Metal Scrap": 4,
+      "Wiring Kit": 7,
+      "Control System": 8
+    },
+    "prerequisites": [
+      "Transportation Tech 3"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Electronics Tech 9",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wood": 5,
+      "Metal Sheet": 1,
+      "Alloy Plate": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 11,
+    "name": "Recycling & Environment Tech 10",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Time Crystal": 2,
+      "Wiring Kit": 1,
+      "Metal Scrap": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 12,
+    "name": "Transportation Tech 11",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Organic Matter": 8,
+      "Wiring Kit": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 13,
+    "name": "AI & Advanced Tech 12",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Control System": 5,
+      "Unstable Energy": 7,
+      "Metal Scrap": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 14,
+    "name": "Food Tech 13",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Alloy Plate": 7,
+      "Crystal": 9,
+      "Metal Scrap": 7
+    },
+    "prerequisites": [
+      "Transportation Tech 3"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Security Tech 14",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Control System": 10,
+      "Time Crystal": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 16,
+    "name": "Time Tech Tech 15",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Refined Metal": 2,
+      "Wood Plank": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 17,
+    "name": "Exploration & Research Tech 16",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Unstable Energy": 2,
+      "Bio Tissue": 10,
+      "Medicinal Plant": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 18,
+    "name": "Communication Tech 17",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Alloy Plate": 3,
+      "Raw Metal": 6,
+      "Wood Plank": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 19,
+    "name": "Exploration & Research Tech 18",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Wood Plank": 10,
+      "Seed": 1,
+      "Time Crystal": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 20,
+    "name": "Agriculture & Production Tech 19",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Metal Sheet": 8,
+      "Microorganism": 3,
+      "Rubber": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 21,
+    "name": "Shelter Tech 20",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Control System": 1,
+      "Copper": 3,
+      "Organic Matter": 2
+    },
+    "prerequisites": [
+      "Exploration & Research Tech 7"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Recycling & Environment Tech 21",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Metal Sheet": 8,
+      "Seed": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 23,
+    "name": "Agriculture & Production Tech 22",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Enzyme": 5,
+      "Organic Matter": 9
+    },
+    "prerequisites": [
+      "Health & Hygiene Tech 8"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Exploration & Research Tech 23",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Alloy": 5,
+      "Refined Alloy": 8,
+      "Metal Scrap": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 25,
+    "name": "Security Tech 24",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Alloy": 7,
+      "Time Crystal": 8,
+      "Stone": 4
+    },
+    "prerequisites": [
+      "Security Tech 14"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Health & Hygiene Tech 25",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Microorganism": 4,
+      "Stone": 4,
+      "Microchip": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 27,
+    "name": "Security Tech 26",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Metal Scrap": 4,
+      "Living Cell": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 28,
+    "name": "Electronics Tech 27",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Seed": 9,
+      "Fertile Soil": 8,
+      "Wood": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 29,
+    "name": "Health & Hygiene Tech 28",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Iron": 5,
+      "Crystal": 10,
+      "Copper Wire": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 30,
+    "name": "Tools & Construction Tech 29",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Plastic": 8,
+      "DNA": 1,
+      "Refined Alloy": 2
+    },
+    "prerequisites": [
+      "Automation Tech 0"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Biology & Life Sciences Tech 30",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Time Crystal": 7,
+      "Refined Alloy": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 32,
+    "name": "Exploration & Research Tech 31",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Fertile Soil": 3,
+      "Water": 6,
+      "Wood": 6
+    },
+    "prerequisites": [
+      "Time Tech Tech 15"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Security Tech 32",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Metal Sheet": 7,
+      "Stone": 1,
+      "Seed": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 34,
+    "name": "Shelter Tech 33",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Food": 6,
+      "Seed": 9,
+      "Control System": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 35,
+    "name": "Health & Hygiene Tech 34",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Copper Wire": 3,
+      "Seed": 7,
+      "Microorganism": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 36,
+    "name": "Communication Tech 35",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Microorganism": 1,
+      "Alloy Plate": 9,
+      "Metal Scrap": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 37,
+    "name": "Water Tech 36",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Fertile Soil": 8,
+      "Organic Matter": 2,
+      "Seed": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 38,
+    "name": "Biology & Life Sciences Tech 37",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Organic Matter": 3,
+      "Metal Scrap": 9
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 21"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Health & Hygiene Tech 38",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Metal Sheet": 8,
+      "Copper Wire": 3,
+      "Alloy Plate": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 40,
+    "name": "Biology & Life Sciences Tech 39",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Food": 9,
+      "Stone": 3,
+      "Organic Matter": 1
+    },
+    "prerequisites": [
+      "Security Tech 24"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Communication Tech 40",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Time Crystal": 8,
+      "Copper": 4
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 5"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Automation Tech 41",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Food": 4,
+      "Unstable Energy": 4
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 19"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Recycling & Environment Tech 42",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Rubber": 6,
+      "Medicinal Plant": 1
+    },
+    "prerequisites": [
+      "Transportation Tech 3"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Exploration & Research Tech 43",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Microorganism": 5,
+      "Metal Sheet": 2,
+      "Food": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 45,
+    "name": "Communication Tech 44",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Enzyme": 8,
+      "Crystal": 9,
+      "Wood": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 46,
+    "name": "Biology & Life Sciences Tech 45",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Enzyme": 10,
+      "Microchip": 4,
+      "Metal Sheet": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 47,
+    "name": "Shelter Tech 46",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Stone": 4,
+      "Enzyme": 3,
+      "Control System": 8
+    },
+    "prerequisites": [
+      "Water Tech 36"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Recycling & Environment Tech 47",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Copper": 5,
+      "Medicinal Plant": 6,
+      "Iron": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 49,
+    "name": "Recycling & Environment Tech 48",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Bio Tissue": 6,
+      "Water": 6,
+      "DNA": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 50,
+    "name": "Agriculture & Production Tech 49",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Battery": 7,
+      "DNA": 5,
+      "Medicinal Plant": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 51,
+    "name": "Water Tech 50",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Wiring Kit": 8,
+      "Plastic": 9,
+      "Refined Metal": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 52,
+    "name": "Electronics Tech 51",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Seed": 5,
+      "Enzyme": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 53,
+    "name": "Electronics Tech 52",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Rubber": 5,
+      "Medicinal Plant": 5,
+      "Refined Alloy": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 54,
+    "name": "Shelter Tech 53",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Metal Sheet": 5,
+      "Metal Scrap": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 55,
+    "name": "Electronics Tech 54",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Seed": 6,
+      "Metal Sheet": 9,
+      "Stone": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 56,
+    "name": "Biology & Life Sciences Tech 55",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Copper": 4,
+      "DNA": 1
+    },
+    "prerequisites": [
+      "Communication Tech 44"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Food Tech 56",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Control System": 9,
+      "Rubber": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 58,
+    "name": "Automation Tech 57",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Control System": 1,
+      "Time Crystal": 4,
+      "Living Cell": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 59,
+    "name": "Tools & Construction Tech 58",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Fertile Soil": 7,
+      "Refined Metal": 3
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 1"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Biology & Life Sciences Tech 59",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Iron": 9,
+      "Unstable Energy": 2,
+      "Copper Wire": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 61,
+    "name": "Automation Tech 60",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Wood Plank": 3,
+      "Organic Matter": 3,
+      "Unstable Energy": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 62,
+    "name": "Food Tech 61",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "Wiring Kit": 10,
+      "Metal Scrap": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 63,
+    "name": "Recycling & Environment Tech 62",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Unstable Energy": 9,
+      "Raw Metal": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 64,
+    "name": "Electronics Tech 63",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Plastic": 6,
+      "Raw Metal": 1,
+      "Microchip": 6
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 47"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Biology & Life Sciences Tech 64",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Medicinal Plant": 10,
+      "Water": 9,
+      "Bio Tissue": 3
+    },
+    "prerequisites": [
+      "Exploration & Research Tech 16"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Electronics Tech 65",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wood Plank": 1,
+      "Organic Matter": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 67,
+    "name": "Automation Tech 66",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Metal Sheet": 3,
+      "Enzyme": 8,
+      "Crystal": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 68,
+    "name": "Security Tech 67",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Plastic": 6,
+      "Enzyme": 1,
+      "Water": 7
+    },
+    "prerequisites": [
+      "Exploration & Research Tech 43"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Electronics Tech 68",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Bio Tissue": 6,
+      "Alloy Plate": 5,
+      "Refined Alloy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 70,
+    "name": "Food Tech 69",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Water": 7,
+      "Wiring Kit": 8,
+      "Wood Plank": 2
+    },
+    "prerequisites": [
+      "Security Tech 24"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Recycling & Environment Tech 70",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Food": 3,
+      "Enzyme": 10,
+      "Metal Scrap": 2
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 10"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Time Tech Tech 71",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Wood Plank": 5,
+      "Raw Metal": 1
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 10"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Biology & Life Sciences Tech 72",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Medicinal Plant": 6,
+      "Microorganism": 7,
+      "Living Cell": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 74,
+    "name": "Shelter Tech 73",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Plastic": 9,
+      "Seed": 8,
+      "Refined Alloy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 75,
+    "name": "Health & Hygiene Tech 74",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Raw Metal": 8,
+      "Fertile Soil": 2,
+      "Enzyme": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 76,
+    "name": "Food Tech 75",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Organic Matter": 3,
+      "Crystal": 4,
+      "Plastic": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 77,
+    "name": "Food Tech 76",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "DNA": 6,
+      "Copper": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 78,
+    "name": "Agriculture & Production Tech 77",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Microchip": 4,
+      "Organic Matter": 4,
+      "Water": 6
+    },
+    "prerequisites": [
+      "Shelter Tech 46"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Electronics Tech 78",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Plastic": 9,
+      "Time Crystal": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 80,
+    "name": "Biology & Life Sciences Tech 79",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Iron": 3,
+      "DNA": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 81,
+    "name": "Health & Hygiene Tech 80",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Raw Metal": 3,
+      "Living Cell": 8,
+      "Food": 7
+    },
+    "prerequisites": [
+      "Exploration & Research Tech 16"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Biology & Life Sciences Tech 81",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Microorganism": 5,
+      "Fertile Soil": 4,
+      "Iron": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 83,
+    "name": "Communication Tech 82",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Bio Tissue": 6,
+      "Copper": 2,
+      "Metal Scrap": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 84,
+    "name": "AI & Advanced Tech 83",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Metal Scrap": 7,
+      "Unstable Energy": 4,
+      "Wood": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 85,
+    "name": "Tools & Construction Tech 84",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Wood": 7,
+      "Alloy Plate": 4,
+      "Microchip": 2
+    },
+    "prerequisites": [
+      "Shelter Tech 20"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Communication Tech 85",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "DNA": 4,
+      "Seed": 8,
+      "Living Cell": 3
+    },
+    "prerequisites": [
+      "Security Tech 26"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Recycling & Environment Tech 86",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Copper": 8,
+      "Metal Sheet": 2,
+      "Metal Scrap": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 88,
+    "name": "Communication Tech 87",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Plastic": 3,
+      "Microchip": 2,
+      "Wood": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 89,
+    "name": "Energy Tech 88",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Unstable Energy": 2,
+      "Wood Plank": 3,
+      "Refined Alloy": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 90,
+    "name": "Transportation Tech 89",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Time Crystal": 4,
+      "Fertile Soil": 9,
+      "Microchip": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 91,
+    "name": "Tools & Construction Tech 90",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Metal Sheet": 6,
+      "Stone": 9,
+      "Unstable Energy": 8
+    },
+    "prerequisites": [
+      "AI & Advanced Tech 83"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Water Tech 91",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Unstable Energy": 2,
+      "Wood": 9,
+      "Copper Wire": 4
+    },
+    "prerequisites": [
+      "Security Tech 67"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Recycling & Environment Tech 92",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Stone": 8,
+      "Plastic": 2,
+      "Unstable Energy": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 94,
+    "name": "Water Tech 93",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Stone": 10,
+      "DNA": 1,
+      "Organic Matter": 3
+    },
+    "prerequisites": [
+      "Food Tech 61"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Communication Tech 94",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Fertile Soil": 6,
+      "Wood": 3,
+      "Metal Sheet": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 96,
+    "name": "Security Tech 95",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Seed": 1,
+      "Copper": 4,
+      "Raw Metal": 7
+    },
+    "prerequisites": [
+      "Electronics Tech 54"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Energy Tech 96",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Enzyme": 1,
+      "Metal Sheet": 5,
+      "Food": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 98,
+    "name": "Transportation Tech 97",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Medicinal Plant": 3,
+      "Stone": 6,
+      "Organic Matter": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 99,
+    "name": "Time Tech Tech 98",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Living Cell": 2,
+      "Bio Tissue": 7,
+      "Battery": 6
+    },
+    "prerequisites": [
+      "Water Tech 93"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Communication Tech 99",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Refined Metal": 7,
+      "Time Crystal": 4,
+      "Alloy Plate": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 101,
+    "name": "Agriculture & Production Tech 100",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Stone": 6,
+      "Refined Metal": 2,
+      "Wood": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 102,
+    "name": "Food Tech 101",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Alloy Plate": 8,
+      "Wood": 1,
+      "Living Cell": 4
+    },
+    "prerequisites": [
+      "Tools & Construction Tech 84"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Communication Tech 102",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Battery": 6,
+      "Wiring Kit": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 104,
+    "name": "AI & Advanced Tech 103",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Microorganism": 9,
+      "Stone": 5,
+      "Water": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 105,
+    "name": "Automation Tech 104",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Rubber": 5,
+      "Copper": 6,
+      "Alloy": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 106,
+    "name": "Shelter Tech 105",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Living Cell": 2,
+      "Copper Wire": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 107,
+    "name": "Shelter Tech 106",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Enzyme": 5,
+      "Time Crystal": 3,
+      "Microorganism": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 108,
+    "name": "Tools & Construction Tech 107",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Stone": 5,
+      "Enzyme": 8,
+      "Microorganism": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 109,
+    "name": "Time Tech Tech 108",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Wood Plank": 3,
+      "Microorganism": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 110,
+    "name": "Electronics Tech 109",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Organic Matter": 8,
+      "Rubber": 6,
+      "Food": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 111,
+    "name": "Water Tech 110",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Refined Metal": 9,
+      "Crystal": 7,
+      "Enzyme": 10
+    },
+    "prerequisites": [
+      "Automation Tech 57"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Recycling & Environment Tech 111",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Copper Wire": 4,
+      "Enzyme": 9
+    },
+    "prerequisites": [
+      "Health & Hygiene Tech 38"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Tools & Construction Tech 112",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Metal Sheet": 2,
+      "Wood Plank": 3,
+      "Iron": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 114,
+    "name": "Agriculture & Production Tech 113",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Refined Alloy": 10,
+      "Copper": 7,
+      "Unstable Energy": 10
+    },
+    "prerequisites": [
+      "Communication Tech 102"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "AI & Advanced Tech 114",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Metal Sheet": 6,
+      "Rubber": 7,
+      "Wood": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 116,
+    "name": "AI & Advanced Tech 115",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Living Cell": 5,
+      "Time Crystal": 9,
+      "Rubber": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 117,
+    "name": "Communication Tech 116",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Organic Matter": 7,
+      "Bio Tissue": 3,
+      "Living Cell": 4
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 59"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Shelter Tech 117",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Food": 6,
+      "Wiring Kit": 7,
+      "Fertile Soil": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 119,
+    "name": "Electronics Tech 118",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Metal Sheet": 6,
+      "Refined Metal": 3,
+      "Wood Plank": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 120,
+    "name": "Time Tech Tech 119",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Metal Scrap": 2,
+      "Microorganism": 4,
+      "DNA": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 121,
+    "name": "Time Tech Tech 120",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Refined Alloy": 6,
+      "Iron": 7
+    },
+    "prerequisites": [
+      "Food Tech 61"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Shelter Tech 121",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Metal Scrap": 2,
+      "Alloy": 10,
+      "Wood": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 123,
+    "name": "Exploration & Research Tech 122",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Wood Plank": 2,
+      "Bio Tissue": 10,
+      "Iron": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 124,
+    "name": "Communication Tech 123",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Alloy Plate": 4,
+      "Medicinal Plant": 10,
+      "Microchip": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 125,
+    "name": "Recycling & Environment Tech 124",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Plastic": 2,
+      "Organic Matter": 6,
+      "Stone": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 126,
+    "name": "Recycling & Environment Tech 125",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Food": 7,
+      "Water": 7,
+      "Metal Scrap": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 127,
+    "name": "Electronics Tech 126",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Living Cell": 7,
+      "Control System": 5,
+      "Iron": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 128,
+    "name": "Recycling & Environment Tech 127",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Rubber": 1,
+      "Time Crystal": 4
+    },
+    "prerequisites": [
+      "Food Tech 61"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Food Tech 128",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "DNA": 9,
+      "Microchip": 5,
+      "Wiring Kit": 3
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 124"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Transportation Tech 129",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Control System": 1,
+      "Microchip": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 131,
+    "name": "Water Tech 130",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Enzyme": 7,
+      "Metal Sheet": 3,
+      "Food": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 132,
+    "name": "Time Tech Tech 131",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Microchip": 10,
+      "Wood": 5,
+      "Living Cell": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 133,
+    "name": "Transportation Tech 132",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Refined Metal": 5,
+      "Copper": 9,
+      "Raw Metal": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 134,
+    "name": "Communication Tech 133",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Organic Matter": 8,
+      "Time Crystal": 9,
+      "Fertile Soil": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 135,
+    "name": "Energy Tech 134",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Rubber": 3,
+      "Crystal": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 136,
+    "name": "Energy Tech 135",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Raw Metal": 4,
+      "Control System": 8,
+      "Fertile Soil": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 137,
+    "name": "Exploration & Research Tech 136",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Stone": 3,
+      "Battery": 8,
+      "Refined Metal": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 138,
+    "name": "Communication Tech 137",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Microorganism": 3,
+      "DNA": 8,
+      "Wood Plank": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 139,
+    "name": "Water Tech 138",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Fertile Soil": 1,
+      "DNA": 4,
+      "Medicinal Plant": 8
+    },
+    "prerequisites": [
+      "Transportation Tech 2"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Exploration & Research Tech 139",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Rubber": 6,
+      "Microorganism": 10,
+      "Medicinal Plant": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 141,
+    "name": "Water Tech 140",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Copper": 3,
+      "Alloy Plate": 2,
+      "Living Cell": 5
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 86"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Time Tech Tech 141",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Alloy": 7,
+      "Rubber": 2,
+      "Wood": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 143,
+    "name": "Food Tech 142",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Food": 3,
+      "Control System": 4,
+      "Rubber": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 144,
+    "name": "Energy Tech 143",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Wood Plank": 6,
+      "Alloy": 8,
+      "Bio Tissue": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 145,
+    "name": "Health & Hygiene Tech 144",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Wood Plank": 6,
+      "Organic Matter": 10
+    },
+    "prerequisites": [
+      "Water Tech 110"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Agriculture & Production Tech 145",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Copper Wire": 10,
+      "DNA": 10,
+      "Wood Plank": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 147,
+    "name": "Communication Tech 146",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Rubber": 2,
+      "Wiring Kit": 6
+    },
+    "prerequisites": [
+      "Tools & Construction Tech 58"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Biology & Life Sciences Tech 147",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Seed": 6,
+      "Medicinal Plant": 3,
+      "Wiring Kit": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 149,
+    "name": "Water Tech 148",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Organic Matter": 4,
+      "Microorganism": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 150,
+    "name": "Food Tech 149",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Water": 8,
+      "Iron": 7,
+      "Refined Alloy": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 151,
+    "name": "Energy Tech 150",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Microorganism": 2,
+      "Crystal": 5,
+      "Iron": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 152,
+    "name": "Time Tech Tech 151",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Crystal": 6,
+      "Seed": 1,
+      "Fertile Soil": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 153,
+    "name": "Recycling & Environment Tech 152",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Battery": 9,
+      "Alloy Plate": 9,
+      "Refined Metal": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 154,
+    "name": "Communication Tech 153",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Crystal": 8,
+      "Control System": 7,
+      "Stone": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 155,
+    "name": "Transportation Tech 154",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Raw Metal": 1,
+      "Seed": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 156,
+    "name": "AI & Advanced Tech 155",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Rubber": 1,
+      "Medicinal Plant": 9,
+      "Plastic": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 157,
+    "name": "Recycling & Environment Tech 156",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Time Crystal": 10,
+      "Unstable Energy": 5,
+      "Organic Matter": 1
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 81"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "Energy Tech 157",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Food": 6,
+      "DNA": 9,
+      "Unstable Energy": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 159,
+    "name": "Recycling & Environment Tech 158",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Microorganism": 8,
+      "Plastic": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 160,
+    "name": "Water Tech 159",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Food": 9,
+      "Bio Tissue": 8
+    },
+    "prerequisites": [
+      "Time Tech Tech 120"
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Security Tech 160",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Alloy Plate": 7,
+      "Rubber": 1
+    },
+    "prerequisites": [
+      "Food Tech 75"
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Recycling & Environment Tech 161",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Alloy Plate": 5,
+      "Copper": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 163,
+    "name": "Food Tech 162",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Water": 7,
+      "Battery": 7,
+      "Alloy": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 164,
+    "name": "Health & Hygiene Tech 163",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Medicinal Plant": 2,
+      "Raw Metal": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 165,
+    "name": "Communication Tech 164",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Medicinal Plant": 6,
+      "Wood": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 166,
+    "name": "AI & Advanced Tech 165",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Bio Tissue": 7,
+      "Rubber": 5,
+      "Microchip": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 167,
+    "name": "Time Tech Tech 166",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Organic Matter": 1,
+      "Alloy": 5,
+      "Time Crystal": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 168,
+    "name": "Electronics Tech 167",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Bio Tissue": 4,
+      "Rubber": 1,
+      "Microchip": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 169,
+    "name": "Time Tech Tech 168",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Microchip": 2,
+      "Enzyme": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 170,
+    "name": "Tools & Construction Tech 169",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Battery": 3,
+      "Unstable Energy": 8,
+      "Seed": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 171,
+    "name": "Recycling & Environment Tech 170",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Rubber": 10,
+      "Seed": 1,
+      "Refined Metal": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 172,
+    "name": "Automation Tech 171",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Alloy Plate": 3,
+      "Microorganism": 8
+    },
+    "prerequisites": [
+      "Electronics Tech 27"
+    ]
+  },
+  {
+    "id": 173,
+    "name": "AI & Advanced Tech 172",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Refined Alloy": 2,
+      "Copper": 1,
+      "Alloy Plate": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 174,
+    "name": "Energy Tech 173",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Refined Alloy": 10,
+      "Refined Metal": 8,
+      "Living Cell": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 175,
+    "name": "Communication Tech 174",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Food": 2,
+      "Organic Matter": 1,
+      "Unstable Energy": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 176,
+    "name": "Communication Tech 175",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Living Cell": 6,
+      "Wood Plank": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 177,
+    "name": "Communication Tech 176",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Wood Plank": 6,
+      "Bio Tissue": 6,
+      "Alloy": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 178,
+    "name": "Electronics Tech 177",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Enzyme": 5,
+      "Refined Alloy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 179,
+    "name": "Transportation Tech 178",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Microorganism": 3,
+      "Seed": 3,
+      "Organic Matter": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 180,
+    "name": "Recycling & Environment Tech 179",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Rubber": 6,
+      "Wood Plank": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 181,
+    "name": "Water Tech 180",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Wood": 4,
+      "Metal Scrap": 10,
+      "Battery": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 182,
+    "name": "Exploration & Research Tech 181",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Wood": 4,
+      "Water": 8,
+      "Battery": 6
+    },
+    "prerequisites": [
+      "Transportation Tech 129"
+    ]
+  },
+  {
+    "id": 183,
+    "name": "Water Tech 182",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Food": 8,
+      "Water": 7,
+      "Rubber": 7
+    },
+    "prerequisites": [
+      "Water Tech 91"
+    ]
+  },
+  {
+    "id": 184,
+    "name": "Transportation Tech 183",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Time Crystal": 4,
+      "Alloy Plate": 7,
+      "Alloy": 4
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 10"
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Food Tech 184",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Water": 6,
+      "Fertile Soil": 3,
+      "Control System": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 186,
+    "name": "Agriculture & Production Tech 185",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Copper": 5,
+      "Microorganism": 3,
+      "Iron": 7
+    },
+    "prerequisites": [
+      "Time Tech Tech 168"
+    ]
+  },
+  {
+    "id": 187,
+    "name": "Tools & Construction Tech 186",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "Bio Tissue": 9,
+      "Fertile Soil": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 188,
+    "name": "Time Tech Tech 187",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Seed": 6,
+      "Microchip": 10,
+      "Medicinal Plant": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 189,
+    "name": "Food Tech 188",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Living Cell": 6,
+      "Fertile Soil": 5,
+      "Copper": 6
+    },
+    "prerequisites": [
+      "Water Tech 130"
+    ]
+  },
+  {
+    "id": 190,
+    "name": "Exploration & Research Tech 189",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Copper": 8,
+      "Stone": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 191,
+    "name": "AI & Advanced Tech 190",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Rubber": 3,
+      "Battery": 2,
+      "Fertile Soil": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 192,
+    "name": "Health & Hygiene Tech 191",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Water": 6,
+      "Alloy": 8,
+      "Refined Metal": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 193,
+    "name": "Transportation Tech 192",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Bio Tissue": 2,
+      "Alloy": 10,
+      "Fertile Soil": 7
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 37"
+    ]
+  },
+  {
+    "id": 194,
+    "name": "Communication Tech 193",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Food": 7,
+      "Water": 9,
+      "Battery": 2
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 62"
+    ]
+  },
+  {
+    "id": 195,
+    "name": "Shelter Tech 194",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Raw Metal": 1,
+      "Iron": 3,
+      "Bio Tissue": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 196,
+    "name": "Electronics Tech 195",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Refined Metal": 9,
+      "DNA": 1,
+      "Seed": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 197,
+    "name": "Health & Hygiene Tech 196",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Enzyme": 1,
+      "Wood Plank": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 198,
+    "name": "Exploration & Research Tech 197",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "Time Crystal": 7,
+      "Battery": 8
+    },
+    "prerequisites": [
+      "Time Tech Tech 71"
+    ]
+  },
+  {
+    "id": 199,
+    "name": "Food Tech 198",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Copper Wire": 6,
+      "Copper": 8
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 145"
+    ]
+  },
+  {
+    "id": 200,
+    "name": "AI & Advanced Tech 199",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "Seed": 1,
+      "Fertile Soil": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 201,
+    "name": "Automation Tech 200",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Food": 10,
+      "Wiring Kit": 6,
+      "Iron": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 202,
+    "name": "Transportation Tech 201",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Raw Metal": 1,
+      "Unstable Energy": 9,
+      "Wood Plank": 1
+    },
+    "prerequisites": [
+      "Communication Tech 82"
+    ]
+  },
+  {
+    "id": 203,
+    "name": "Time Tech Tech 202",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Iron": 1,
+      "Time Crystal": 9,
+      "Microorganism": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 204,
+    "name": "Biology & Life Sciences Tech 203",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "Fertile Soil": 10,
+      "Bio Tissue": 10
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 111"
+    ]
+  },
+  {
+    "id": 205,
+    "name": "Biology & Life Sciences Tech 204",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Fertile Soil": 8,
+      "Food": 2
+    },
+    "prerequisites": [
+      "Electronics Tech 195"
+    ]
+  },
+  {
+    "id": 206,
+    "name": "Automation Tech 205",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Wood Plank": 5,
+      "DNA": 1,
+      "Copper Wire": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 207,
+    "name": "Biology & Life Sciences Tech 206",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Wood Plank": 10,
+      "Medicinal Plant": 1
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 161"
+    ]
+  },
+  {
+    "id": 208,
+    "name": "Biology & Life Sciences Tech 207",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Control System": 7,
+      "Organic Matter": 7,
+      "Copper Wire": 4
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 30"
+    ]
+  },
+  {
+    "id": 209,
+    "name": "Transportation Tech 208",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Rubber": 6,
+      "Crystal": 9,
+      "Metal Scrap": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 210,
+    "name": "Health & Hygiene Tech 209",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Plastic": 8,
+      "Iron": 8
+    },
+    "prerequisites": [
+      "Time Tech Tech 98"
+    ]
+  },
+  {
+    "id": 211,
+    "name": "Exploration & Research Tech 210",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Copper Wire": 10,
+      "Refined Metal": 4,
+      "Metal Sheet": 6
+    },
+    "prerequisites": [
+      "Automation Tech 60"
+    ]
+  },
+  {
+    "id": 212,
+    "name": "Transportation Tech 211",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Alloy Plate": 8,
+      "Alloy": 4,
+      "Battery": 1
+    },
+    "prerequisites": [
+      "Automation Tech 57"
+    ]
+  },
+  {
+    "id": 213,
+    "name": "Electronics Tech 212",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Crystal": 6,
+      "Microorganism": 9,
+      "Plastic": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 214,
+    "name": "Security Tech 213",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Wood": 7,
+      "Unstable Energy": 9
+    },
+    "prerequisites": [
+      "Communication Tech 40"
+    ]
+  },
+  {
+    "id": 215,
+    "name": "Transportation Tech 214",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Fertile Soil": 1,
+      "Seed": 10,
+      "Alloy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 216,
+    "name": "Tools & Construction Tech 215",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Plastic": 4,
+      "Fertile Soil": 4,
+      "Refined Metal": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 217,
+    "name": "Automation Tech 216",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Enzyme": 7,
+      "Plastic": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 218,
+    "name": "Shelter Tech 217",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Iron": 1,
+      "Metal Sheet": 3,
+      "Wiring Kit": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 219,
+    "name": "Automation Tech 218",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Wood": 7,
+      "Food": 5
+    },
+    "prerequisites": [
+      "Communication Tech 175"
+    ]
+  },
+  {
+    "id": 220,
+    "name": "Agriculture & Production Tech 219",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Wood Plank": 1,
+      "Wiring Kit": 9
+    },
+    "prerequisites": [
+      "Communication Tech 193"
+    ]
+  },
+  {
+    "id": 221,
+    "name": "Time Tech Tech 220",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Living Cell": 4,
+      "Stone": 2,
+      "Metal Scrap": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 222,
+    "name": "Recycling & Environment Tech 221",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Refined Alloy": 3,
+      "Seed": 4,
+      "Water": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 223,
+    "name": "Biology & Life Sciences Tech 222",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Wiring Kit": 3,
+      "Crystal": 2,
+      "Copper Wire": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 224,
+    "name": "Security Tech 223",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Microchip": 9,
+      "Alloy": 7,
+      "Water": 4
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 113"
+    ]
+  },
+  {
+    "id": 225,
+    "name": "Transportation Tech 224",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Alloy": 7,
+      "Enzyme": 4,
+      "Bio Tissue": 9
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 70"
+    ]
+  },
+  {
+    "id": 226,
+    "name": "Biology & Life Sciences Tech 225",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Alloy": 6,
+      "Metal Sheet": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 227,
+    "name": "Transportation Tech 226",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Crystal": 5,
+      "Copper": 1,
+      "DNA": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 228,
+    "name": "Transportation Tech 227",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Plastic": 5,
+      "Alloy": 5
+    },
+    "prerequisites": [
+      "Automation Tech 60"
+    ]
+  },
+  {
+    "id": 229,
+    "name": "Health & Hygiene Tech 228",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Control System": 5,
+      "Plastic": 5,
+      "Copper": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 230,
+    "name": "Food Tech 229",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Refined Metal": 4,
+      "Battery": 4,
+      "Microorganism": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 231,
+    "name": "Time Tech Tech 230",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Fertile Soil": 4,
+      "Refined Metal": 4,
+      "Raw Metal": 1
+    },
+    "prerequisites": [
+      "Electronics Tech 126"
+    ]
+  },
+  {
+    "id": 232,
+    "name": "Electronics Tech 231",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Seed": 1,
+      "Enzyme": 1,
+      "Refined Metal": 1
+    },
+    "prerequisites": [
+      "Food Tech 128"
+    ]
+  },
+  {
+    "id": 233,
+    "name": "Shelter Tech 232",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Seed": 2,
+      "DNA": 7,
+      "Microorganism": 4
+    },
+    "prerequisites": [
+      "Transportation Tech 154"
+    ]
+  },
+  {
+    "id": 234,
+    "name": "Recycling & Environment Tech 233",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Unstable Energy": 8,
+      "Food": 1,
+      "Refined Metal": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 235,
+    "name": "Security Tech 234",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Living Cell": 10,
+      "Control System": 7,
+      "Copper Wire": 2
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 37"
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Communication Tech 235",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Battery": 2,
+      "Alloy Plate": 2,
+      "Wiring Kit": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 237,
+    "name": "Security Tech 236",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Rubber": 5,
+      "Fertile Soil": 1,
+      "Organic Matter": 4
+    },
+    "prerequisites": [
+      "Shelter Tech 73"
+    ]
+  },
+  {
+    "id": 238,
+    "name": "Security Tech 237",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Alloy Plate": 4,
+      "Wood Plank": 3,
+      "Rubber": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 239,
+    "name": "Transportation Tech 238",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Water": 2,
+      "Raw Metal": 6,
+      "Refined Alloy": 9
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 47"
+    ]
+  },
+  {
+    "id": 240,
+    "name": "Biology & Life Sciences Tech 239",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Enzyme": 8,
+      "Wood": 4,
+      "Battery": 7
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 206"
+    ]
+  },
+  {
+    "id": 241,
+    "name": "Health & Hygiene Tech 240",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Wood Plank": 4,
+      "Organic Matter": 8,
+      "Raw Metal": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 242,
+    "name": "AI & Advanced Tech 241",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Copper": 7,
+      "Wiring Kit": 1
+    },
+    "prerequisites": [
+      "AI & Advanced Tech 12"
+    ]
+  },
+  {
+    "id": 243,
+    "name": "Tools & Construction Tech 242",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Metal Sheet": 4,
+      "Rubber": 5,
+      "Refined Alloy": 3
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 77"
+    ]
+  },
+  {
+    "id": 244,
+    "name": "Food Tech 243",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Microorganism": 3,
+      "Wood": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 245,
+    "name": "AI & Advanced Tech 244",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Enzyme": 7,
+      "Refined Metal": 7,
+      "Metal Scrap": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 246,
+    "name": "Food Tech 245",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Iron": 1,
+      "Metal Scrap": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 247,
+    "name": "Agriculture & Production Tech 246",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Metal Sheet": 5,
+      "Rubber": 6
+    },
+    "prerequisites": [
+      "Time Tech Tech 166"
+    ]
+  },
+  {
+    "id": 248,
+    "name": "Transportation Tech 247",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Fertile Soil": 3,
+      "Bio Tissue": 6,
+      "Copper Wire": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 249,
+    "name": "Communication Tech 248",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Metal Sheet": 5,
+      "Wood Plank": 2,
+      "Copper Wire": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 250,
+    "name": "Tools & Construction Tech 249",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Food": 10,
+      "Metal Scrap": 4
+    },
+    "prerequisites": [
+      "Time Tech Tech 120"
+    ]
+  },
+  {
+    "id": 251,
+    "name": "Recycling & Environment Tech 250",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Unstable Energy": 1,
+      "Living Cell": 2,
+      "Alloy": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 252,
+    "name": "Security Tech 251",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Medicinal Plant": 3,
+      "Metal Sheet": 1,
+      "Refined Metal": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 253,
+    "name": "Security Tech 252",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Control System": 3,
+      "Wood Plank": 3,
+      "Iron": 6
+    },
+    "prerequisites": [
+      "Time Tech Tech 168"
+    ]
+  },
+  {
+    "id": 254,
+    "name": "Transportation Tech 253",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "DNA": 6,
+      "Unstable Energy": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 255,
+    "name": "Health & Hygiene Tech 254",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Unstable Energy": 3,
+      "Stone": 5,
+      "Fertile Soil": 5
+    },
+    "prerequisites": [
+      "Automation Tech 57"
+    ]
+  },
+  {
+    "id": 256,
+    "name": "Health & Hygiene Tech 255",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Raw Metal": 8,
+      "Copper Wire": 5,
+      "Alloy": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 257,
+    "name": "Communication Tech 256",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Raw Metal": 10,
+      "Plastic": 3,
+      "Organic Matter": 4
+    },
+    "prerequisites": [
+      "Communication Tech 99"
+    ]
+  },
+  {
+    "id": 258,
+    "name": "Electronics Tech 257",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Raw Metal": 5,
+      "Metal Sheet": 6,
+      "Microchip": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 259,
+    "name": "Electronics Tech 258",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Time Crystal": 10,
+      "Enzyme": 6,
+      "Alloy Plate": 9
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 22"
+    ]
+  },
+  {
+    "id": 260,
+    "name": "Food Tech 259",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Copper Wire": 8,
+      "Medicinal Plant": 8,
+      "Living Cell": 10
+    },
+    "prerequisites": [
+      "Health & Hygiene Tech 209"
+    ]
+  },
+  {
+    "id": 261,
+    "name": "Agriculture & Production Tech 260",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Copper": 3,
+      "Refined Alloy": 4,
+      "Unstable Energy": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 262,
+    "name": "Transportation Tech 261",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Metal Scrap": 4,
+      "Enzyme": 9,
+      "DNA": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 263,
+    "name": "Shelter Tech 262",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Copper Wire": 9,
+      "Wiring Kit": 7,
+      "Raw Metal": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 264,
+    "name": "Security Tech 263",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Metal Scrap": 2,
+      "Wood Plank": 6,
+      "Stone": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 265,
+    "name": "Recycling & Environment Tech 264",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Control System": 1,
+      "Wood": 6
+    },
+    "prerequisites": [
+      "Shelter Tech 194"
+    ]
+  },
+  {
+    "id": 266,
+    "name": "Automation Tech 265",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Alloy": 7,
+      "Alloy Plate": 3,
+      "Metal Scrap": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 267,
+    "name": "Biology & Life Sciences Tech 266",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "DNA": 9,
+      "Alloy Plate": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 268,
+    "name": "Food Tech 267",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Alloy Plate": 4,
+      "Iron": 4,
+      "Time Crystal": 9
+    },
+    "prerequisites": [
+      "Transportation Tech 238"
+    ]
+  },
+  {
+    "id": 269,
+    "name": "Health & Hygiene Tech 268",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Rubber": 7,
+      "Water": 10,
+      "Unstable Energy": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 270,
+    "name": "Agriculture & Production Tech 269",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Control System": 10,
+      "Copper Wire": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 271,
+    "name": "Recycling & Environment Tech 270",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Microorganism": 6,
+      "Refined Alloy": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 272,
+    "name": "Recycling & Environment Tech 271",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Plastic": 3,
+      "Copper Wire": 5,
+      "Unstable Energy": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 273,
+    "name": "Recycling & Environment Tech 272",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Microorganism": 1,
+      "Time Crystal": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 274,
+    "name": "Recycling & Environment Tech 273",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Metal Scrap": 7,
+      "Wood Plank": 8
+    },
+    "prerequisites": [
+      "Communication Tech 164"
+    ]
+  },
+  {
+    "id": 275,
+    "name": "Water Tech 274",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Fertile Soil": 6,
+      "Food": 7,
+      "Metal Sheet": 7
+    },
+    "prerequisites": [
+      "Transportation Tech 214"
+    ]
+  },
+  {
+    "id": 276,
+    "name": "Transportation Tech 275",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Time Crystal": 9,
+      "Copper": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 277,
+    "name": "Transportation Tech 276",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Time Crystal": 10,
+      "Rubber": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 278,
+    "name": "Health & Hygiene Tech 277",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Fertile Soil": 4,
+      "Seed": 8,
+      "Water": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 279,
+    "name": "Communication Tech 278",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Living Cell": 3,
+      "Fertile Soil": 8,
+      "Time Crystal": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 280,
+    "name": "Shelter Tech 279",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Alloy": 1,
+      "Plastic": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 281,
+    "name": "Health & Hygiene Tech 280",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Refined Alloy": 5,
+      "Wood": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 282,
+    "name": "Biology & Life Sciences Tech 281",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Rubber": 5,
+      "Microchip": 2,
+      "Alloy": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 283,
+    "name": "Security Tech 282",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Microorganism": 5,
+      "Battery": 1,
+      "Organic Matter": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 284,
+    "name": "Security Tech 283",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Living Cell": 4,
+      "Organic Matter": 8,
+      "Fertile Soil": 10
+    },
+    "prerequisites": [
+      "Automation Tech 265"
+    ]
+  },
+  {
+    "id": 285,
+    "name": "Water Tech 284",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Alloy": 1,
+      "Rubber": 3,
+      "Wood": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 286,
+    "name": "Health & Hygiene Tech 285",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Time Crystal": 9,
+      "Battery": 1
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 124"
+    ]
+  },
+  {
+    "id": 287,
+    "name": "Shelter Tech 286",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Living Cell": 1,
+      "Alloy": 5,
+      "Time Crystal": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 288,
+    "name": "AI & Advanced Tech 287",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Time Crystal": 6,
+      "Organic Matter": 3,
+      "Food": 3
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 72"
+    ]
+  },
+  {
+    "id": 289,
+    "name": "Electronics Tech 288",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Battery": 6,
+      "Organic Matter": 4,
+      "Crystal": 2
+    },
+    "prerequisites": [
+      "Energy Tech 143"
+    ]
+  },
+  {
+    "id": 290,
+    "name": "Time Tech Tech 289",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Refined Metal": 6,
+      "Unstable Energy": 4,
+      "Microorganism": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 291,
+    "name": "Time Tech Tech 290",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Wood Plank": 10,
+      "Living Cell": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 292,
+    "name": "Automation Tech 291",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Microchip": 9,
+      "Metal Sheet": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 293,
+    "name": "Exploration & Research Tech 292",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Refined Metal": 3,
+      "Unstable Energy": 1,
+      "Wood Plank": 5
+    },
+    "prerequisites": [
+      "AI & Advanced Tech 155"
+    ]
+  },
+  {
+    "id": 294,
+    "name": "Exploration & Research Tech 293",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Stone": 3,
+      "Crystal": 6,
+      "Metal Sheet": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 295,
+    "name": "Tools & Construction Tech 294",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Fertile Soil": 6,
+      "Seed": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 296,
+    "name": "Shelter Tech 295",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Metal Sheet": 4,
+      "Time Crystal": 6,
+      "Food": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 297,
+    "name": "Agriculture & Production Tech 296",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Refined Alloy": 8,
+      "Control System": 8,
+      "Microchip": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 298,
+    "name": "Food Tech 297",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Battery": 9,
+      "Raw Metal": 4,
+      "Living Cell": 3
+    },
+    "prerequisites": [
+      "Automation Tech 205"
+    ]
+  },
+  {
+    "id": 299,
+    "name": "Automation Tech 298",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Battery": 3,
+      "Microchip": 4
+    },
+    "prerequisites": [
+      "Agriculture & Production Tech 100"
+    ]
+  },
+  {
+    "id": 300,
+    "name": "Transportation Tech 299",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Microchip": 2,
+      "Alloy": 3,
+      "Microorganism": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 301,
+    "name": "Recycling & Environment Tech 300",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Bio Tissue": 4,
+      "Stone": 7,
+      "Metal Sheet": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 302,
+    "name": "Tools & Construction Tech 301",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Enzyme": 2,
+      "Bio Tissue": 5,
+      "Water": 8
+    },
+    "prerequisites": [
+      "Automation Tech 57"
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Food Tech 302",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Living Cell": 3,
+      "Time Crystal": 10,
+      "Microorganism": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 304,
+    "name": "Tools & Construction Tech 303",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Metal Scrap": 7,
+      "Rubber": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 305,
+    "name": "Health & Hygiene Tech 304",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Food": 8,
+      "Bio Tissue": 10,
+      "Fertile Soil": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 306,
+    "name": "Electronics Tech 305",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Alloy": 10,
+      "Wood": 2,
+      "Crystal": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 307,
+    "name": "Electronics Tech 306",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wiring Kit": 5,
+      "Water": 10
+    },
+    "prerequisites": [
+      "Water Tech 182"
+    ]
+  },
+  {
+    "id": 308,
+    "name": "Time Tech Tech 307",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Wiring Kit": 10,
+      "Living Cell": 3,
+      "Enzyme": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 309,
+    "name": "AI & Advanced Tech 308",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Fertile Soil": 5,
+      "Alloy": 5,
+      "Water": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 310,
+    "name": "Security Tech 309",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Metal Scrap": 3,
+      "Wood Plank": 10,
+      "Enzyme": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 311,
+    "name": "Biology & Life Sciences Tech 310",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Medicinal Plant": 1,
+      "Plastic": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 312,
+    "name": "Transportation Tech 311",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Rubber": 8,
+      "Microorganism": 10,
+      "Raw Metal": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 313,
+    "name": "Security Tech 312",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Control System": 3,
+      "Microorganism": 8,
+      "Water": 8
+    },
+    "prerequisites": [
+      "Food Tech 101"
+    ]
+  },
+  {
+    "id": 314,
+    "name": "Biology & Life Sciences Tech 313",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Stone": 6,
+      "Fertile Soil": 2,
+      "Microchip": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 315,
+    "name": "Shelter Tech 314",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Copper": 3,
+      "Seed": 5,
+      "Stone": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 316,
+    "name": "Agriculture & Production Tech 315",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Unstable Energy": 2,
+      "Wood Plank": 7,
+      "Bio Tissue": 10
+    },
+    "prerequisites": [
+      "Automation Tech 200"
+    ]
+  },
+  {
+    "id": 317,
+    "name": "Health & Hygiene Tech 316",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Microchip": 10,
+      "Refined Metal": 3
+    },
+    "prerequisites": [
+      "Communication Tech 44"
+    ]
+  },
+  {
+    "id": 318,
+    "name": "Communication Tech 317",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Time Crystal": 9,
+      "Unstable Energy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 319,
+    "name": "Water Tech 318",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Medicinal Plant": 6,
+      "Microorganism": 5,
+      "Water": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 320,
+    "name": "Communication Tech 319",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Seed": 2,
+      "Time Crystal": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 321,
+    "name": "Security Tech 320",
+    "category": "Security",
+    "type": "building",
+    "description": "A security related structure or advancement.",
+    "effect": "Improves security capabilities.",
+    "materials": {
+      "Living Cell": 5,
+      "Wiring Kit": 2,
+      "Iron": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 322,
+    "name": "Food Tech 321",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Alloy": 2,
+      "Fertile Soil": 2,
+      "Water": 4
+    },
+    "prerequisites": [
+      "Communication Tech 87"
+    ]
+  },
+  {
+    "id": 323,
+    "name": "Communication Tech 322",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Wood Plank": 1,
+      "Raw Metal": 8,
+      "Food": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 324,
+    "name": "Health & Hygiene Tech 323",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Refined Metal": 2,
+      "Metal Sheet": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 325,
+    "name": "Tools & Construction Tech 324",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Plastic": 7,
+      "Raw Metal": 5,
+      "Metal Sheet": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 326,
+    "name": "Shelter Tech 325",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Control System": 5,
+      "Fertile Soil": 6,
+      "Organic Matter": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 327,
+    "name": "Agriculture & Production Tech 326",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "DNA": 3,
+      "Alloy Plate": 9,
+      "Microorganism": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 328,
+    "name": "Tools & Construction Tech 327",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Organic Matter": 3,
+      "Bio Tissue": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 329,
+    "name": "Time Tech Tech 328",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Microchip": 7,
+      "DNA": 1,
+      "Rubber": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 330,
+    "name": "Health & Hygiene Tech 329",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Control System": 2,
+      "Battery": 10,
+      "Plastic": 2
+    },
+    "prerequisites": [
+      "Recycling & Environment Tech 250"
+    ]
+  },
+  {
+    "id": 331,
+    "name": "Biology & Life Sciences Tech 330",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Alloy": 3,
+      "Fertile Soil": 2,
+      "Bio Tissue": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 332,
+    "name": "Electronics Tech 331",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Stone": 3,
+      "Copper Wire": 2,
+      "Refined Metal": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 333,
+    "name": "Shelter Tech 332",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Unstable Energy": 5,
+      "Medicinal Plant": 1,
+      "Alloy": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 334,
+    "name": "Water Tech 333",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Refined Metal": 7,
+      "DNA": 3,
+      "Raw Metal": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 335,
+    "name": "Shelter Tech 334",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Raw Metal": 10,
+      "Living Cell": 1,
+      "Microchip": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 336,
+    "name": "Biology & Life Sciences Tech 335",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Organic Matter": 4,
+      "Control System": 10,
+      "Refined Metal": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 337,
+    "name": "Recycling & Environment Tech 336",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Enzyme": 3,
+      "Iron": 9,
+      "Crystal": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 338,
+    "name": "Food Tech 337",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Wiring Kit": 6,
+      "Water": 7,
+      "Refined Metal": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 339,
+    "name": "AI & Advanced Tech 338",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Copper": 1,
+      "Battery": 2,
+      "Rubber": 6
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 310"
+    ]
+  },
+  {
+    "id": 340,
+    "name": "Exploration & Research Tech 339",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Living Cell": 7,
+      "Iron": 10,
+      "Enzyme": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 341,
+    "name": "Biology & Life Sciences Tech 340",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Crystal": 1,
+      "Plastic": 3,
+      "Bio Tissue": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 342,
+    "name": "Biology & Life Sciences Tech 341",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Living Cell": 6,
+      "Battery": 3,
+      "Crystal": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 343,
+    "name": "Shelter Tech 342",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Bio Tissue": 7,
+      "DNA": 3,
+      "Raw Metal": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 344,
+    "name": "Exploration & Research Tech 343",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Iron": 5,
+      "Seed": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 345,
+    "name": "Transportation Tech 344",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Metal Sheet": 6,
+      "DNA": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 346,
+    "name": "Energy Tech 345",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Microorganism": 6,
+      "Fertile Soil": 3,
+      "Battery": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 347,
+    "name": "Exploration & Research Tech 346",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Alloy": 5,
+      "Bio Tissue": 6,
+      "Alloy Plate": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 348,
+    "name": "Food Tech 347",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Refined Alloy": 5,
+      "Organic Matter": 6,
+      "Alloy": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 349,
+    "name": "Time Tech Tech 348",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Iron": 3,
+      "Wood": 9,
+      "Alloy Plate": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 350,
+    "name": "Agriculture & Production Tech 349",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Rubber": 10,
+      "Water": 2,
+      "Control System": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 351,
+    "name": "Biology & Life Sciences Tech 350",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "DNA": 10,
+      "Microorganism": 2,
+      "Iron": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 352,
+    "name": "Tools & Construction Tech 351",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Iron": 3,
+      "Plastic": 5,
+      "Crystal": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 353,
+    "name": "Electronics Tech 352",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wood Plank": 6,
+      "Living Cell": 8,
+      "Food": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 354,
+    "name": "Health & Hygiene Tech 353",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Bio Tissue": 9,
+      "Unstable Energy": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 355,
+    "name": "Time Tech Tech 354",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Battery": 9,
+      "Living Cell": 5,
+      "Unstable Energy": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 356,
+    "name": "Energy Tech 355",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Alloy": 10,
+      "Copper Wire": 3,
+      "Unstable Energy": 7
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 39"
+    ]
+  },
+  {
+    "id": 357,
+    "name": "Electronics Tech 356",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Refined Metal": 7,
+      "Copper Wire": 3,
+      "Control System": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 358,
+    "name": "Food Tech 357",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Copper Wire": 9,
+      "Wood Plank": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 359,
+    "name": "Time Tech Tech 358",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A time tech related structure or advancement.",
+    "effect": "Improves time tech capabilities.",
+    "materials": {
+      "Wood": 3,
+      "Refined Metal": 7,
+      "Wiring Kit": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 360,
+    "name": "Agriculture & Production Tech 359",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Enzyme": 10,
+      "Battery": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 361,
+    "name": "Automation Tech 360",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Microchip": 8,
+      "DNA": 2,
+      "Battery": 5
+    },
+    "prerequisites": [
+      "Biology & Life Sciences Tech 55"
+    ]
+  },
+  {
+    "id": 362,
+    "name": "Communication Tech 361",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Microorganism": 10,
+      "Copper Wire": 8,
+      "Refined Alloy": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 363,
+    "name": "Energy Tech 362",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Refined Alloy": 5,
+      "Bio Tissue": 9,
+      "Metal Sheet": 10
+    },
+    "prerequisites": [
+      "Food Tech 76"
+    ]
+  },
+  {
+    "id": 364,
+    "name": "Energy Tech 363",
+    "category": "Energy",
+    "type": "technology",
+    "description": "A energy related structure or advancement.",
+    "effect": "Improves energy capabilities.",
+    "materials": {
+      "Refined Alloy": 4,
+      "Crystal": 5,
+      "Water": 10
+    },
+    "prerequisites": [
+      "Electronics Tech 78"
+    ]
+  },
+  {
+    "id": 365,
+    "name": "Biology & Life Sciences Tech 364",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Metal Sheet": 5,
+      "Living Cell": 8,
+      "Rubber": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 366,
+    "name": "Biology & Life Sciences Tech 365",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "DNA": 2,
+      "Raw Metal": 4,
+      "Copper Wire": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 367,
+    "name": "Electronics Tech 366",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Microchip": 6,
+      "Seed": 10,
+      "Organic Matter": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 368,
+    "name": "Tools & Construction Tech 367",
+    "category": "Tools & Construction",
+    "type": "building",
+    "description": "A tools & construction related structure or advancement.",
+    "effect": "Improves tools & construction capabilities.",
+    "materials": {
+      "Control System": 8,
+      "Copper": 8,
+      "Time Crystal": 4
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 369,
+    "name": "Electronics Tech 368",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Stone": 10,
+      "Living Cell": 2,
+      "Bio Tissue": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 370,
+    "name": "Water Tech 369",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Wiring Kit": 6,
+      "Refined Metal": 10,
+      "Copper": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 371,
+    "name": "Water Tech 370",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Alloy Plate": 4,
+      "Wiring Kit": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 372,
+    "name": "Transportation Tech 371",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Water": 9,
+      "Enzyme": 3
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 373,
+    "name": "Recycling & Environment Tech 372",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Microorganism": 8,
+      "Organic Matter": 5,
+      "Bio Tissue": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 374,
+    "name": "Shelter Tech 373",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Plastic": 10,
+      "Seed": 1,
+      "Stone": 10
+    },
+    "prerequisites": [
+      "Food Tech 101"
+    ]
+  },
+  {
+    "id": 375,
+    "name": "Exploration & Research Tech 374",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Water": 8,
+      "Metal Scrap": 9,
+      "Organic Matter": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 376,
+    "name": "Recycling & Environment Tech 375",
+    "category": "Recycling & Environment",
+    "type": "technology",
+    "description": "A recycling & environment related structure or advancement.",
+    "effect": "Improves recycling & environment capabilities.",
+    "materials": {
+      "Stone": 2,
+      "Crystal": 6,
+      "Rubber": 2
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 377,
+    "name": "Shelter Tech 376",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Fertile Soil": 2,
+      "Seed": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 378,
+    "name": "Agriculture & Production Tech 377",
+    "category": "Agriculture & Production",
+    "type": "technology",
+    "description": "A agriculture & production related structure or advancement.",
+    "effect": "Improves agriculture & production capabilities.",
+    "materials": {
+      "Crystal": 6,
+      "Copper Wire": 5,
+      "Medicinal Plant": 7
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 379,
+    "name": "Communication Tech 378",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Refined Metal": 9,
+      "Living Cell": 1,
+      "Food": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 380,
+    "name": "Health & Hygiene Tech 379",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Refined Alloy": 2,
+      "Metal Scrap": 6,
+      "Metal Sheet": 5
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 381,
+    "name": "Transportation Tech 380",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Metal Sheet": 5,
+      "Microorganism": 2,
+      "Iron": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 382,
+    "name": "Water Tech 381",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Living Cell": 10,
+      "Wood": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 383,
+    "name": "Health & Hygiene Tech 382",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Iron": 8,
+      "Control System": 5,
+      "Water": 10
+    },
+    "prerequisites": [
+      "Food Tech 245"
+    ]
+  },
+  {
+    "id": 384,
+    "name": "Electronics Tech 383",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Alloy Plate": 2,
+      "Refined Alloy": 7,
+      "Stone": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 385,
+    "name": "Health & Hygiene Tech 384",
+    "category": "Health & Hygiene",
+    "type": "technology",
+    "description": "A health & hygiene related structure or advancement.",
+    "effect": "Improves health & hygiene capabilities.",
+    "materials": {
+      "Alloy": 1,
+      "Microorganism": 8,
+      "Raw Metal": 10
+    },
+    "prerequisites": [
+      "Food Tech 321"
+    ]
+  },
+  {
+    "id": 386,
+    "name": "Shelter Tech 385",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Alloy Plate": 6,
+      "Metal Scrap": 4,
+      "Raw Metal": 1
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 387,
+    "name": "Water Tech 386",
+    "category": "Water",
+    "type": "technology",
+    "description": "A water related structure or advancement.",
+    "effect": "Improves water capabilities.",
+    "materials": {
+      "Food": 10,
+      "Refined Alloy": 4,
+      "Refined Metal": 1
+    },
+    "prerequisites": [
+      "Security Tech 67"
+    ]
+  },
+  {
+    "id": 388,
+    "name": "Biology & Life Sciences Tech 387",
+    "category": "Biology & Life Sciences",
+    "type": "technology",
+    "description": "A biology & life sciences related structure or advancement.",
+    "effect": "Improves biology & life sciences capabilities.",
+    "materials": {
+      "Enzyme": 8,
+      "Microchip": 1,
+      "Alloy": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 389,
+    "name": "Electronics Tech 388",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wiring Kit": 10,
+      "Wood Plank": 3,
+      "Enzyme": 9
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 390,
+    "name": "AI & Advanced Tech 389",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "DNA": 1,
+      "Seed": 10,
+      "Living Cell": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 391,
+    "name": "Electronics Tech 390",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Wiring Kit": 4,
+      "Unstable Energy": 7,
+      "Crystal": 1
+    },
+    "prerequisites": [
+      "Time Tech Tech 307"
+    ]
+  },
+  {
+    "id": 392,
+    "name": "Shelter Tech 391",
+    "category": "Shelter",
+    "type": "building",
+    "description": "A shelter related structure or advancement.",
+    "effect": "Improves shelter capabilities.",
+    "materials": {
+      "Microorganism": 9,
+      "Crystal": 3
+    },
+    "prerequisites": [
+      "Communication Tech 82"
+    ]
+  },
+  {
+    "id": 393,
+    "name": "Exploration & Research Tech 392",
+    "category": "Exploration & Research",
+    "type": "technology",
+    "description": "A exploration & research related structure or advancement.",
+    "effect": "Improves exploration & research capabilities.",
+    "materials": {
+      "Wiring Kit": 8,
+      "Alloy Plate": 3,
+      "Control System": 9
+    },
+    "prerequisites": [
+      "Shelter Tech 373"
+    ]
+  },
+  {
+    "id": 394,
+    "name": "Automation Tech 393",
+    "category": "Automation",
+    "type": "technology",
+    "description": "A automation related structure or advancement.",
+    "effect": "Improves automation capabilities.",
+    "materials": {
+      "Iron": 8,
+      "Fertile Soil": 10,
+      "Microorganism": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 395,
+    "name": "Electronics Tech 394",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Alloy Plate": 10,
+      "Living Cell": 5,
+      "Rubber": 10
+    },
+    "prerequisites": [
+      "Transportation Tech 208"
+    ]
+  },
+  {
+    "id": 396,
+    "name": "Electronics Tech 395",
+    "category": "Electronics",
+    "type": "technology",
+    "description": "A electronics related structure or advancement.",
+    "effect": "Improves electronics capabilities.",
+    "materials": {
+      "Refined Metal": 1,
+      "Plastic": 7,
+      "Fertile Soil": 8
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 397,
+    "name": "AI & Advanced Tech 396",
+    "category": "AI & Advanced",
+    "type": "technology",
+    "description": "A ai & advanced related structure or advancement.",
+    "effect": "Improves ai & advanced capabilities.",
+    "materials": {
+      "Copper Wire": 9,
+      "Crystal": 3,
+      "Time Crystal": 4
+    },
+    "prerequisites": [
+      "Water Tech 369"
+    ]
+  },
+  {
+    "id": 398,
+    "name": "Communication Tech 397",
+    "category": "Communication",
+    "type": "technology",
+    "description": "A communication related structure or advancement.",
+    "effect": "Improves communication capabilities.",
+    "materials": {
+      "Iron": 7,
+      "Crystal": 10
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 399,
+    "name": "Transportation Tech 398",
+    "category": "Transportation",
+    "type": "technology",
+    "description": "A transportation related structure or advancement.",
+    "effect": "Improves transportation capabilities.",
+    "materials": {
+      "Raw Metal": 1,
+      "Fertile Soil": 4,
+      "Time Crystal": 6
+    },
+    "prerequisites": [
+      "Tools & Construction Tech 169"
+    ]
+  },
+  {
+    "id": 400,
+    "name": "Food Tech 399",
+    "category": "Food",
+    "type": "technology",
+    "description": "A food related structure or advancement.",
+    "effect": "Improves food capabilities.",
+    "materials": {
+      "Water": 9,
+      "Living Cell": 4,
+      "Microorganism": 6
+    },
+    "prerequisites": []
+  },
+  {
+    "id": 401,
+    "name": "Time Machine",
+    "category": "Time Tech",
+    "type": "technology",
+    "description": "A device that allows travel through time.",
+    "effect": "Win condition or unlocks new era.",
+    "materials": {
+      "Time Crystal": 10,
+      "Advanced Electronics": 5,
+      "AI Core": 2
+    },
+    "prerequisites": [
+      "Electronics Tech 68",
+      "Time Tech Tech 120",
+      "Time Tech Tech 71"
+    ]
+  }
+]
