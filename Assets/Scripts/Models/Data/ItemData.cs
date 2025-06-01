@@ -1,23 +1,20 @@
 using System;
 using Enums;
+using Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Models.Data
 {
+    [CreateAssetMenu(menuName = "Crafting/Item")]
     [Serializable]
-    public class ItemData
+    public class ItemData : CraftableData, ICraftable<ItemType>, IIdentifiable<ItemType>
     {
         public ItemType type;
-        public GameObject prefab;
-        public string itemName;
-        public Sprite icon;
-        public Color color;
         public bool IsValid()
         {
             return prefab != null 
-                   && !string.IsNullOrEmpty(itemName) 
                    && icon != null;
         }
+        public ItemType GetID() => type;
     }
 }

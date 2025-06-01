@@ -9,7 +9,7 @@ namespace Base_Classes
    public abstract class Collectable : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
    {
       [SerializeField]
-      protected ItemType itemType;
+      protected SourceType itemType;
       
       [SerializeField]
       protected bool isTriggerable;
@@ -41,7 +41,7 @@ namespace Base_Classes
          IsCollected = true;
       }
 
-      public ItemType GetItemType()
+      public SourceType GetItemType()
       {
          return itemType;
       }

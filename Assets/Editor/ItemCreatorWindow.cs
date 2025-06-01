@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Databases;
 using Enums;
 using Models;
 using Models.Data;
-using Models.Scriptable_Objects;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ namespace Editor
         private string itemDescription = "";
         private Sprite displaySprite;
         private List<SourceRequirement> resourceRequirements = new();
-        private CraftItemDatabase itemDatabase;
+        private ItemDatabase itemDatabase;
 
         [MenuItem("Tools/Item Creator")]
         public static void ShowWindow()
@@ -52,7 +52,7 @@ namespace Editor
             }
 
             EditorGUILayout.Space();
-            itemDatabase = (CraftItemDatabase)EditorGUILayout.ObjectField("Item Database", itemDatabase, typeof(CraftItemDatabase), false);
+            itemDatabase = (ItemDatabase)EditorGUILayout.ObjectField("Item Database", itemDatabase, typeof(ItemDatabase), false);
 
             if (GUILayout.Button("Create Item"))
             {
@@ -62,20 +62,23 @@ namespace Editor
                     return;
                 }
 
-                CraftItemData newItem = CreateInstance<CraftItemData>();
-                newItem.itemName = itemName;
+                ItemData newItem = CreateInstance<ItemData>();
+                
+                //todo : create new itemtype
+                //newItem.type = itemName;
+                
                 newItem.description = itemDescription;
-                newItem.displaySprite = displaySprite;
-                newItem.requiredResources = new List<SourceRequirement>(resourceRequirements);
+                newItem.icon = displaySprite;
+                newItem.requirements = new List<SourceRequirement>(resourceRequirements);
 
                 string path = $"Assets/Scriptable Objects/Items/{itemName}.asset";
                 AssetDatabase.CreateAsset(newItem, path);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
 
-                if (!itemDatabase.items.Any(i => i.itemName == itemName))
+                if (itemDatabase.Entries.All(i => i.type.ToString() != itemName))
                 {
-                    itemDatabase.items.Add(newItem);
+                    itemDatabase.Entries.Add(newItem);
                     EditorUtility.SetDirty(itemDatabase);
                     AssetDatabase.SaveAssets();
                 }

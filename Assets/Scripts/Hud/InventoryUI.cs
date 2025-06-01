@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Databases;
 using DG.Tweening;
 using Enums;
-using Models.Scriptable_Objects;
+using Hud;
 using TMPro;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI tooltipText;
         [SerializeField] private SourceDatabase sourceDatabase;
 
-        private readonly Dictionary<ItemType, InventorySlotUI> _slots = new();
+        private readonly Dictionary<SourceType, InventorySlotUI> _slots = new();
 
         private bool _isOpen = false;
         private  Vector2 _cashedPanelPosition; 
@@ -35,7 +36,7 @@ namespace UI
             PlayerInventory.Instance.OnInventoryChanged += RefreshInventory;
             RefreshInventory(PlayerInventory.Instance.GetInventory());
             _cashedPanelPosition = new Vector2(-panel.rect.width, 0);
-            SourceDatabase.Initialize(sourceDatabase);
+            sourceDatabase.Initialize();
         }
 
         private void OnDisable()
@@ -60,7 +61,7 @@ namespace UI
                 panel.DOAnchorPos(_cashedPanelPosition, 0.5f).SetEase(Ease.InExpo);
         }
 
-        private void RefreshInventory(Dictionary<ItemType, int> inventoryData)
+        private void RefreshInventory(Dictionary<SourceType, int> inventoryData)
         {
             foreach (Transform child in slotParent)
                 Destroy(child.gameObject);

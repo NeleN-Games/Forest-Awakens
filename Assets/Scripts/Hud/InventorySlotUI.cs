@@ -1,33 +1,35 @@
+using Databases;
 using Enums;
-using Models.Scriptable_Objects;
 using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
+namespace Hud
 {
-    public Image icon;
-    public TextMeshProUGUI countText;
-
-    private ItemType _itemType;
-
-    public void Setup(ItemType type, int count)
+    public class InventorySlotUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     {
-        _itemType = type;
-        icon.sprite = SourceDatabase.GetSource(type).icon;
-        icon.color = SourceDatabase.GetSource(type).color;
-        countText.text = count.ToString();
-    }
+        public Image icon;
+        public TextMeshProUGUI countText;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        InventoryUI.Instance.ShowTooltip(SourceDatabase.GetSource(_itemType).itemName, Input.mousePosition);
-    }
+        private SourceType _sourceType;
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        InventoryUI.Instance.HideTooltip();
+        public void Setup(SourceType type, int count)
+        {
+            _sourceType = type;
+            icon.sprite = SourceDatabase.Get(type).icon;
+            countText.text = count.ToString();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            InventoryUI.Instance.ShowTooltip(SourceDatabase.Get(_sourceType).type.ToString(), Input.mousePosition);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            InventoryUI.Instance.HideTooltip();
+        }
     }
 }
