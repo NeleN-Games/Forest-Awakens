@@ -1,5 +1,8 @@
+using System;
+
 namespace Models
 {
+    [Serializable]
     public class CraftCommand<TID>
     {
         public TID ID { get; }

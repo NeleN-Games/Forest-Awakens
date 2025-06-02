@@ -5,44 +5,69 @@ using UnityEngine;
 
 namespace Databases
 {
-    public abstract class GenericDatabase<TEnum, TData> : ScriptableObject
+    public abstract class GenericDatabase<TEnum, TData> : ScriptableObject,IInitializable
         where TEnum : Enum
         where TData : class, IIdentifiable<TEnum>
     {
-        protected List<TData> entries = new();
+        [SerializeField] protected List<TData> entries = new();
         public List<TData> Entries => entries;
-        protected static Dictionary<TEnum, TData> dataDict;
+        protected  Dictionary<TEnum, TData> DataDict;
 
         public virtual void Initialize()
         {
-            dataDict = new Dictionary<TEnum, TData>();
+            DataDict = new Dictionary<TEnum, TData>();
             foreach (var entry in entries)
             {
                 if (entry == null) continue;
 
                 var id = entry.GetID();
-                if (dataDict.ContainsKey(id))
+                if (DataDict.ContainsKey(id))
                 {
                     Debug.LogWarning($"Duplicate ID {id} in {typeof(TData)}");
                     continue;
                 }
 
-                dataDict[id] = entry;
+                DataDict[id] = entry;
             }
         }
 
-        public static TData Get(TEnum id)
+        public TData Get(TEnum id)
         {
-            if (dataDict != null && dataDict.TryGetValue(id, out var data))
+            if (DataDict != null && DataDict.TryGetValue(id, out var data))
                 return data;
 
             Debug.LogError($"No data found for ID {id} in {typeof(TData)}");
             return null;
         }
 
-        public static bool Has(TEnum id)
+        public bool Has(TEnum id)
         {
-            return dataDict != null && dataDict.ContainsKey(id);
+            return DataDict != null && DataDict.ContainsKey(id);
         }
+        
+        public virtual bool Remove(TData item)
+        {
+            if (item == null) return false;
+
+            var id = item.GetID();
+
+            if (DataDict != null && DataDict.ContainsKey(id))
+            {
+                DataDict.Remove(id);
+            }
+
+            return entries.Remove(item);
+        }
+
+        public virtual bool RemoveByID(TEnum id)
+        {
+            if (DataDict == null || !DataDict.ContainsKey(id))
+                return false;
+
+            var item = DataDict[id];
+            DataDict.Remove(id);
+            return entries.Remove(item);
+        }
+      
     }
 }

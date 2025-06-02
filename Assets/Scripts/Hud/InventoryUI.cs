@@ -3,6 +3,7 @@ using Databases;
 using DG.Tweening;
 using Enums;
 using Hud;
+using Services;
 using TMPro;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace UI
             PlayerInventory.Instance.OnInventoryChanged += RefreshInventory;
             RefreshInventory(PlayerInventory.Instance.GetInventory());
             _cashedPanelPosition = new Vector2(-panel.rect.width, 0);
-            sourceDatabase.Initialize();
+            sourceDatabase=ServiceLocator.Get<SourceDatabase>();
         }
 
         private void OnDisable()

@@ -2,6 +2,7 @@ using Databases;
 using DG.Tweening;
 using Enums;
 using Models;
+using Services;
 using UnityEngine;
 
 namespace Base_Classes
@@ -33,7 +34,7 @@ namespace Base_Classes
             {
                 if (_resourcePrefab == null)
                 {
-                    _resourcePrefab = SourceDatabase.Get(itemType).prefab;
+                    _resourcePrefab = ServiceLocator.Get<SourceDatabase>().Get(itemType).prefab;
                 }
                 return _resourcePrefab;
             }

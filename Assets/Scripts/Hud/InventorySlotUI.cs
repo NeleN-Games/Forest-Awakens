@@ -1,5 +1,6 @@
 using Databases;
 using Enums;
+using Services;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -18,13 +19,13 @@ namespace Hud
         public void Setup(SourceType type, int count)
         {
             _sourceType = type;
-            icon.sprite = SourceDatabase.Get(type).icon;
+            icon.sprite = ServiceLocator.Get<SourceDatabase>().Get(type).icon;
             countText.text = count.ToString();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            InventoryUI.Instance.ShowTooltip(SourceDatabase.Get(_sourceType).type.ToString(), Input.mousePosition);
+            InventoryUI.Instance.ShowTooltip(ServiceLocator.Get<SourceDatabase>().Get(_sourceType).type.ToString(), Input.mousePosition);
         }
 
         public void OnPointerExit(PointerEventData eventData)

@@ -3,6 +3,7 @@ using Databases;
 using Interfaces;
 using Models;
 using Models.Data;
+using Services;
 using UnityEngine;
 
 namespace Managers
@@ -14,10 +15,11 @@ namespace Managers
     {
         public Action<CraftCommand<TID>, TDatabase> OnCraft;
 
-        [SerializeField] private TDatabase database;
+        public TDatabase database;
 
         private void Awake()
         {
+            database = ServiceLocator.Get<TDatabase>();
             OnCraft += Craft;
         }
 
@@ -28,7 +30,7 @@ namespace Managers
 
         private void Craft(CraftCommand<TID> command, TDatabase db)
         {
-            var data = GenericDatabase<TID, TData>.Get(command.ID);
+            var data = database.Get(command.ID);
             if (data == null)
             {
                 OnCraftFailure(null);

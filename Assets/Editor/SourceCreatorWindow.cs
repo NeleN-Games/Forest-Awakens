@@ -10,7 +10,7 @@ namespace Editor
     /// A Unity Editor window used to create new collectable item prefabs,
     /// including associated scripts and asset references like icon and world sprites.
     /// </summary>
-    public class SourcePrefabCreatorWindow : EditorWindow
+    public class SourceCreatorWindow : EditorWindow
     {
         private string itemName = "";
         private Sprite iconSprite;
@@ -23,7 +23,7 @@ namespace Editor
         [MenuItem("Tools/Source Prefab Creator")]
         public static void ShowWindow()
         {
-            GetWindow<SourcePrefabCreatorWindow>("Source Prefab Creator");
+            GetWindow<SourceCreatorWindow>("Source Prefab Creator");
         }
 
         /// <summary>

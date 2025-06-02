@@ -1,9 +1,9 @@
 using Databases;
 using Enums;
+using Managers;
 using Models.Data;
-using UnityEngine;
 
-namespace Managers
+namespace Helper
 {
     public class ItemCrafter : Crafter<ItemType, ItemData, ItemDatabase>
     {
