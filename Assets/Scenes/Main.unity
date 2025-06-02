@@ -2871,9 +2871,9 @@ MonoBehaviour:
   healthBar: {fileID: 1310460757}
   hungerBar: {fileID: 743258770}
   energyBar: {fileID: 154088135}
-  healthImage: {fileID: 0}
-  hungerImage: {fileID: 0}
-  energyImage: {fileID: 0}
+  healthImage: {fileID: 803881487}
+  hungerImage: {fileID: 80764046}
+  energyImage: {fileID: 1857827047}
   animationDuration: 1.5
 --- !u!1 &1825071103
 GameObject:
