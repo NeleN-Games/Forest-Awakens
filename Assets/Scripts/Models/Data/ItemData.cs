@@ -9,8 +9,6 @@ namespace Models.Data
     [Serializable]
     public class ItemData : CraftableAssetData<ItemType>, ICraftable<ItemType>, IIdentifiable<ItemType>
     {
-        public ItemType type;
-       
-        public override ItemType GetID() => type;
+       public override ItemType GetID() => enumType;
     }
 }

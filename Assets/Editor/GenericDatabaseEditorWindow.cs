@@ -90,7 +90,7 @@ namespace Editor
             DrawSectionHeader($"{EditorName} Configuration", new Color(0.1f, 0.5f, 0.1f, 1f));
             
             EditorGUILayout.Space(10);
-            Debug.Log(RequiresResourceRequirements);
+            
             if (RequiresResourceRequirements)
             {
                 _resourceRequirements=SourceRequirementPrefs.Load();

@@ -20,7 +20,7 @@ namespace Editor
 
             EditorGUI.PropertyField(statTypeRect, property.FindPropertyRelative("statType"));
             EditorGUI.PropertyField(amountRect, property.FindPropertyRelative("amount"));
-            var affectsRateProp = property.FindPropertyRelative("affectsRate");
+            var affectsRateProp = property.FindPropertyRelative("hasEffectRate");
             EditorGUI.PropertyField(affectsRateRect, affectsRateProp);
 
             if (affectsRateProp.boolValue)
@@ -37,7 +37,7 @@ namespace Editor
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            var affectsRate = property.FindPropertyRelative("affectsRate").boolValue;
+            var affectsRate = property.FindPropertyRelative("hasEffectRate").boolValue;
             int lines = affectsRate ? 5 : 3;
             return lines * (EditorGUIUtility.singleLineHeight + 2f);
         }

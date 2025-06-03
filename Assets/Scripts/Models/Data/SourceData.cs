@@ -10,10 +10,5 @@ namespace Models.Data
     public class SourceData : CommonAssetData<SourceType>, IIdentifiable<SourceType>
     {
         public override SourceType GetID() => enumType;
-        protected override bool IsValid()
-        {
-            return prefab != null 
-                   && icon != null;
-        }
     }
 }
