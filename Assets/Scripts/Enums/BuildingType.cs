@@ -5,7 +5,6 @@ namespace Enums
     [Serializable]
     public enum BuildingType 
     {
-        Storage,
-        FireCamp
+        Dasd,
     }
 }

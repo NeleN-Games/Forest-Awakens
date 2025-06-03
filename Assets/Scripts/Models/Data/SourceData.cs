@@ -7,13 +7,10 @@ namespace Models.Data
 {
     [CreateAssetMenu(menuName = "Data/Source")]
     [Serializable]
-    public class SourceData : ScriptableObject, IIdentifiable<SourceType>
+    public class SourceData : CommonAssetData<SourceType>, IIdentifiable<SourceType>
     {
-        public SourceType type;
-        public GameObject prefab;
-        public Sprite icon;
-        public SourceType GetID() => type;
-        public bool IsValid()
+        public override SourceType GetID() => enumType;
+        protected override bool IsValid()
         {
             return prefab != null 
                    && icon != null;

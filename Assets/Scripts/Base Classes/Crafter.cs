@@ -8,12 +8,12 @@ using UnityEngine;
 
 namespace Managers
 {
-    public abstract class Crafter<TID, TData, TDatabase> : MonoBehaviour
-        where TID : Enum
-        where TData : CraftableData, ICraftable<TID>, IIdentifiable<TID>
-        where TDatabase : GenericDatabase<TID, TData>
+    public abstract class Crafter<TEnum, TData, TDatabase> : MonoBehaviour
+        where TEnum : Enum
+        where TData : CraftableAssetData<TEnum>, ICraftable<TEnum>, IIdentifiable<TEnum>
+        where TDatabase : GenericDatabase<TEnum, TData>
     {
-        public Action<CraftCommand<TID>, TDatabase> OnCraft;
+        public Action<CraftCommand<TEnum>, TDatabase> OnCraft;
 
         public TDatabase database;
 
@@ -28,7 +28,7 @@ namespace Managers
             OnCraft -= Craft;
         }
 
-        private void Craft(CraftCommand<TID> command, TDatabase db)
+        private void Craft(CraftCommand<TEnum> command, TDatabase db)
         {
             var data = database.Get(command.ID);
             if (data == null)
@@ -37,7 +37,7 @@ namespace Managers
                 return;
             }
 
-            if (PlayerInventory.Instance.HasEnoughSources(data.requirements))
+            if (PlayerInventory.Instance.HasEnoughSources(data.resourceRequirements))
             {
                 HandleCraftSuccess(data);
                 OnCraftSuccess(data);

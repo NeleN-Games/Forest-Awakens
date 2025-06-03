@@ -5,18 +5,10 @@ using UnityEngine;
 
 namespace Models.Data
 {
-    [CreateAssetMenu(menuName = "Crafting/Building")]
+    [CreateAssetMenu(menuName = "Data/Building")]
     [Serializable]
-    public class BuildingData : CraftableData, ICraftable<BuildingType>, IIdentifiable<BuildingType>
+    public class BuildingData : CraftableAssetData<BuildingType>, ICraftable<BuildingType>, IIdentifiable<BuildingType>
     {
-
-        public BuildingType type;
-
-        public bool IsValid()
-        {
-            return prefab != null
-                   && icon != null;
-        }
-        public BuildingType GetID() => type;
+        public override BuildingType GetID() => enumType;
     }
 }

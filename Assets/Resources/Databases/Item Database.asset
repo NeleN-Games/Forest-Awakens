@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc8925b73d08474bb5a0d28fbbc0122, type: 3}
-  m_Name: Source Database
+  m_Script: {fileID: 11500000, guid: 0eaa2f7fc44174040bcc68ead6c2fbdf, type: 3}
+  m_Name: Item Database
   m_EditorClassIdentifier: 
   entries:
-  - {fileID: 11400000, guid: ae1d5d5d858f20b4f8b55366490602ac, type: 2}
+  - {fileID: 11400000, guid: 1495931e5c1db2a48bc1af0dce714b75, type: 2}
+  - {fileID: 11400000, guid: 63280b10dfef1c447add295bdf1c65f0, type: 2}

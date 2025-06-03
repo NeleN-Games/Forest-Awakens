@@ -5,6 +5,7 @@ namespace Enums
     [Serializable]
     public enum SourceType
     {
-        Bozghale,
+        Rock,
+        Wood,
     }
 }

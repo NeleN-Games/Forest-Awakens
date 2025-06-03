@@ -25,7 +25,7 @@ namespace Editor
         {
             GetWindow<SourceCreatorWindowsV2>("SourceCreatorWindowsV2 Creator");
         }
-        private void OnGUI()
+        public void OnGUI()
         {
             EditorGUILayout.BeginVertical("box");
             DrawSectionHeader("Item information", new Color(0.2f, 0.5f, 0.8f, 1f));
@@ -205,7 +205,7 @@ namespace Editor
                 Debug.LogError($"Enum.Parse failed: '{_sourceName}' not found in ItemType after refresh.");
                 return;
             }
-            newItem.type = itemType;
+            newItem.enumType = itemType;
             newItem.icon = _displaySprite;
             newItem.prefab = prefab;
 

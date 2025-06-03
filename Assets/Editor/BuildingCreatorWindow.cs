@@ -1,15 +1,10 @@
-using System.Collections.Generic;
 using Databases;
-using Editor.Utilities;
 using Enums;
-using Models;
 using Models.Data;
-using UnityEditor;
-
 
 namespace Editor
 {
-    public class ItemCreatorWindow : GenericDatabaseEditorWindow<ItemData,ItemDatabase,ItemType>
+    public class BuildingCreatorWindow : GenericDatabaseEditorWindow<BuildingData,BuildingDatabase,BuildingType>
     {
         protected override bool SetRequiresResourceRequirements()
         {
@@ -19,26 +14,25 @@ namespace Editor
 
         protected override string GetEditorName()
         {
-            return "Item";
+            return "Building";
         }
 
         protected override string GetExpectedDatabasePath()
         {
             return "Assets/Resources/Databases";
         }
-
+        
         protected override string GetExpectedPrefabsPath()
         {
-            return "Assets/Prefabs/Items";
+            return "Assets/Prefabs/Buildings";
         }
-        
         protected override string GetExpectedDatabaseName()
         {
-            return "Item Database";
+            return "Building Database";
         }
         protected override string GetExpectedDataPath()
         {
-            return "Assets/Resources/Items";
+            return "Assets/Resources/Buildings";
         }
 
         protected override string GetEnumPath()
@@ -48,8 +42,8 @@ namespace Editor
         
         protected override string GetNameFieldLabel()
         {
-           return "Item Name";
+            return "Building Name";
         }
 
-     }
+    }
 }

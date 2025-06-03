@@ -5,16 +5,12 @@ using UnityEngine;
 
 namespace Models.Data
 {
-    [CreateAssetMenu(menuName = "Crafting/Item")]
+    [CreateAssetMenu(menuName = "Data/Item")]
     [Serializable]
-    public class ItemData : CraftableData, ICraftable<ItemType>, IIdentifiable<ItemType>
+    public class ItemData : CraftableAssetData<ItemType>, ICraftable<ItemType>, IIdentifiable<ItemType>
     {
         public ItemType type;
-        public bool IsValid()
-        {
-            return prefab != null 
-                   && icon != null;
-        }
-        public ItemType GetID() => type;
+       
+        public override ItemType GetID() => type;
     }
 }

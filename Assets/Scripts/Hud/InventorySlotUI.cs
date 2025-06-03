@@ -25,7 +25,7 @@ namespace Hud
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            InventoryUI.Instance.ShowTooltip(ServiceLocator.Get<SourceDatabase>().Get(_sourceType).type.ToString(), Input.mousePosition);
+            InventoryUI.Instance.ShowTooltip(ServiceLocator.Get<SourceDatabase>().Get(_sourceType).enumType.ToString(), Input.mousePosition);
         }
 
         public void OnPointerExit(PointerEventData eventData)

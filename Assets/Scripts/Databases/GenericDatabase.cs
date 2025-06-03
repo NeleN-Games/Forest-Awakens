@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using Models.Data;
 using UnityEngine;
 
 namespace Databases
 {
     public abstract class GenericDatabase<TEnum, TData> : ScriptableObject,IInitializable
         where TEnum : Enum
-        where TData : class, IIdentifiable<TEnum>
+        where TData : CommonAssetData<TEnum>, IIdentifiable<TEnum>
     {
         [SerializeField] protected List<TData> entries = new();
         public List<TData> Entries => entries;
