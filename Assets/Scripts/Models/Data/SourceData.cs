@@ -9,6 +9,6 @@ namespace Models.Data
     [Serializable]
     public class SourceData : CommonAssetData<SourceType>, IIdentifiable<SourceType>
     {
-        public override SourceType GetID() => enumType;
+        public override SourceType GetEnum() => enumType;
     }
 }

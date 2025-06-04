@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
+using Enums;
+using Interfaces;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Models.Data
 {
@@ -7,5 +12,6 @@ namespace Models.Data
     {
         public string name;
         public Sprite icon;
+        public List<UniqueId> craftableAssets;
     }
 }

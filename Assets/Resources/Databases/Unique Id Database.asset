@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e758abcb396f48f4382efde28a7fde7b, type: 3}
-  m_Name: CategoryList
+  m_Script: {fileID: 11500000, guid: 9cd05f0abf19ac345a1d78a781047b4c, type: 3}
+  m_Name: Unique Id Database
   m_EditorClassIdentifier: 
-  categories: []
+  uniqueIds:
+  - id: 75855

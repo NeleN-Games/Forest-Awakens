@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed7eaf3df8a4224d8585cddfdfec876, type: 3}
+  m_Name: Xcv
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 319178538508202647, guid: 5ea62dcabdb908249807968c8838dfb4, type: 3}
+  icon: {fileID: 0}
+  enumType: 0
+  uniqueId:
+    id: 0
+  resourceRequirements:
+  - sourceType: 0
+    amount: 1
+  categoryType: 1

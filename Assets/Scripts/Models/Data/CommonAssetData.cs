@@ -8,8 +8,16 @@ namespace Models.Data
         public GameObject prefab;
         public Sprite icon;
         public TEnum enumType;
-        public abstract TEnum GetID();
+       
+        public abstract TEnum GetEnum();
+        
 
+        public virtual void Initialize(GameObject prefab, Sprite icon, TEnum enumType)
+        {
+            this.prefab = prefab;
+            this.icon = icon;
+            this.enumType = enumType;
+        }
         protected virtual bool IsValid()
         {
             return prefab != null && icon != null;

@@ -9,6 +9,6 @@ namespace Models.Data
     [Serializable]
     public class BuildingData : CraftableAssetData<BuildingType>, ICraftable<BuildingType>, IIdentifiable<BuildingType>
     {
-        public override BuildingType GetID() => enumType;
+        public override BuildingType GetEnum() => enumType;
     }
 }

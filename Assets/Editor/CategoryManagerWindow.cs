@@ -1,25 +1,40 @@
+using System;
 using System.IO;
+using System.Linq;
 using Editor.CategoryTool;
+using Editor.Utilities;
+using Enums;
 using Models.Data;
 using Models.Scriptable_Objects;
 using UnityEditor;
 using UnityEngine;
+using Utilities;
 
 namespace Editor
 {
     public class CategoryManagerWindow : EditorWindow
     {
-        private CategoryList categoryList;
+        private CategoryDatabase categoryDatabase;
         private Vector2 scrollPos;
         private string newCategoryName = "";
         private Sprite newCategoryIcon;
+        private bool isLoadedCategoryList = false;
+        private bool hasUnsavedChanges = false;
+        private GUIStyle redButtonStyle;
+        private bool redButtonStyleInitialized = false;
+        private const string CategoryPath = "Assets/Resources/Databases";
+        private const string EnumName = "CategoryType";
+        private const string EnumPath = "Assets/Scripts/Enums/CategoryType.cs";
+        private const string DatabaseFileName = "Category Database";
+
+
 
         [MenuItem("Tools/Category Manager")]
         public static void ShowWindow()
         {
             GetWindow<CategoryManagerWindow>("Category Manager");
         }
-
+        
         private void OnEnable()
         {
             LoadOrCreateCategoryList();
@@ -27,43 +42,89 @@ namespace Editor
 
         private void OnGUI()
         {
-            if (categoryList == null) return;
+            if (!redButtonStyleInitialized)
+            {
+                redButtonStyle = new GUIStyle(GUI.skin.button);
+                Texture2D redTexture = new Texture2D(1, 1);
+                redTexture.SetPixel(0, 0, Color.red);
+                redTexture.Apply();
+                redButtonStyle.normal.background = redTexture;
+                redButtonStyle.hover.background = redTexture;
+                redButtonStyle.active.background = redTexture;
 
+                redButtonStyleInitialized = true;
+            }
+            Drawer.DrawSectionHeader($"Category Manager", new Color(0.2f, 0.5f, 0.8f, 1f));
+
+            EditorGUILayout.LabelField("Category  Asset", EditorStyles.boldLabel);
+
+
+            if (categoryDatabase == null)
+            {
+                EditorGUILayout.HelpBox($"❌Category Database.asset not found at path: {CategoryPath} Database", MessageType.Warning);
+
+                if (GUILayout.Button("Try Load Again"))
+                {
+                    LoadOrCreateCategoryList();
+                }
+                return;
+            }
+            EditorGUILayout.BeginVertical("box");
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
             EditorGUILayout.LabelField("Categories", EditorStyles.boldLabel);
 
-            for (int i = 0; i < categoryList.categories.Count; i++)
+            for (int i = 0; i < categoryDatabase.categories.Count; i++)
             {
                 EditorGUILayout.BeginHorizontal();
 
-                // فیلد عکس برای هر کتگوری
-                categoryList.categories[i].icon = (Sprite)EditorGUILayout.ObjectField(categoryList.categories[i].icon, typeof(Sprite), false, GUILayout.Width(50), GUILayout.Height(50));
-
-                // فیلد نام کتگوری
-                categoryList.categories[i].name = EditorGUILayout.TextField(categoryList.categories[i].name);
-
+                categoryDatabase.categories[i].icon = (Sprite)EditorGUILayout.ObjectField(categoryDatabase.categories[i].icon, typeof(Sprite), false, GUILayout.Width(50), GUILayout.Height(50));
+                if (GUI.changed) hasUnsavedChanges = true;
+                
+                categoryDatabase.categories[i].name = EditorGUILayout.TextField(categoryDatabase.categories[i].name);
+                if (GUI.changed) hasUnsavedChanges = true;
+                
                 if (GUILayout.Button("↑", GUILayout.Width(25)) && i > 0)
                 {
                     Swap(i, i - 1);
+                    hasUnsavedChanges = true;
                 }
-                if (GUILayout.Button("↓", GUILayout.Width(25)) && i < categoryList.categories.Count - 1)
+                if (GUILayout.Button("↓", GUILayout.Width(25)) && i < categoryDatabase.categories.Count - 1)
                 {
                     Swap(i, i + 1);
+                    hasUnsavedChanges = true;
                 }
                 if (GUILayout.Button("X", GUILayout.Width(25)))
                 {
-                    categoryList.categories.RemoveAt(i);
+                    categoryDatabase.categories.RemoveAt(i);
+                    hasUnsavedChanges = true;
                 }
 
                 EditorGUILayout.EndHorizontal();
-            }
 
-            EditorGUILayout.Space();
+            }
+            EditorGUILayout.EndScrollView();  // ✅ پایان ScrollView برای لیست
+
+            EditorGUILayout.EndVertical();
+            
+            EditorGUILayout.Space(10);
+            
+            EditorGUILayout.BeginVertical("box");
+
+            Drawer.DrawSectionHeader($"Category Configuration", new Color(0.1f, 0.5f, 0.1f, 1f));
+
+            EditorGUILayout.Space(10);
+            
             EditorGUILayout.LabelField("Add New Category", EditorStyles.boldLabel);
             
             newCategoryName = EditorGUILayout.TextField("Name", newCategoryName);
+            newCategoryIcon = (Sprite)EditorGUILayout.ObjectField("Icon", newCategoryIcon, typeof(Sprite), false);
 
-            if (GUILayout.Button("Add Category"))
+            EditorGUI.BeginDisabledGroup(isLoadedCategoryList);
+            categoryDatabase = (CategoryDatabase)EditorGUILayout.ObjectField("Loaded Category List", categoryDatabase, typeof(ScriptableObject), false);
+            EditorGUI.EndDisabledGroup();
+            EditorGUILayout.EndVertical();
+            EditorGUI.BeginDisabledGroup(string.IsNullOrWhiteSpace(newCategoryName) || newCategoryIcon==null);
+            if (GUILayout.Button("Add Category",GUILayout.Height(35)))
             {
                 
                 if (string.IsNullOrWhiteSpace(newCategoryName))
@@ -72,111 +133,108 @@ namespace Editor
                 }
                 else
                 {
-                    // صبر می‌کنیم تا اصلاح تایپ آنلاین انجام بشه
                     OnlineSpellChecker.CheckSpelling(newCategoryName.Trim(), correctedName =>
                     {
-                        // اگر اسم اصلاح شده متفاوت بود، پیام میدیم
                         if (correctedName != newCategoryName.Trim())
                         {
                             Debug.Log($"🔧Correcting name: '{newCategoryName}' → '{correctedName}'");
                         }
 
-                        // چک برای اسم تکراری با اسم اصلاح شده
-                        bool exists = categoryList.categories.Exists(c => c.name == correctedName);
+                        bool exists = categoryDatabase.categories.Exists(c => c.name == correctedName);
                         if (exists)
                         {
                             EditorUtility.DisplayDialog("Error", "This name is used before", "Ok");
                         }
                         else
                         {
-                            categoryList.categories.Add(new CategoryData
+                            categoryDatabase.categories.Add(new CategoryData
                             {
                                 name = correctedName,
                                 icon = newCategoryIcon
                             });
+                            SyncCategoryType();
+                            EditorUtility.SetDirty(categoryDatabase);
+                            AssetDatabase.SaveAssets();
                             newCategoryName = "";
                             newCategoryIcon = null;
-
-                            EditorUtility.SetDirty(categoryList);
-                            AssetDatabase.SaveAssets();
-
-                            // چون داخل callback هستیم، باید از این تابع استفاده کنیم تا UI رفرش بشه
                             EditorApplication.delayCall += () => Repaint();
                         }
                     });
                 }
             }
-
-            if (GUILayout.Button("Save"))
+            EditorGUI.EndDisabledGroup();
+            EditorGUILayout.Space(20);
+            if (hasUnsavedChanges)
             {
-                EditorUtility.SetDirty(categoryList);
-                AssetDatabase.SaveAssets();
+                if (GUILayout.Button("Save", redButtonStyle,GUILayout.Height(35)))
+                {
+                    SaveCategoryList();
+                }
             }
-
-            if (GUILayout.Button("Generate CategoryType.cs"))
+            else
             {
-                GenerateCategoryTypeFile();
+                if (GUILayout.Button("Save",GUILayout.Height(35)))
+                {
+                    SaveCategoryList();
+                }
             }
+            EditorGUILayout.Space(40);
 
-            EditorGUILayout.EndScrollView();
         }
 
         private void Swap(int indexA, int indexB)
         {
-            (categoryList.categories[indexA], categoryList.categories[indexB]) = (categoryList.categories[indexB], categoryList.categories[indexA]);
-            EditorUtility.SetDirty(categoryList);
+            (categoryDatabase.categories[indexA], categoryDatabase.categories[indexB]) = (categoryDatabase.categories[indexB], categoryDatabase.categories[indexA]);
+            EditorUtility.SetDirty(categoryDatabase);
             AssetDatabase.SaveAssets();
         }
 
         private void LoadOrCreateCategoryList()
         {
-            categoryList = Resources.Load<CategoryList>("CategoryList");
-            if (categoryList == null)
+            string[] guids = AssetDatabase.FindAssets($"t:{nameof(CategoryDatabase)}", new[] { CategoryPath });
+        
+            foreach (var guid in guids)
             {
-                categoryList = CreateInstance<CategoryList>();
-                Directory.CreateDirectory("Assets/Resources");
-                AssetDatabase.CreateAsset(categoryList, "Assets/Resources/CategoryList.asset");
-                AssetDatabase.SaveAssets();
-                Debug.Log("Created new CategoryList.asset in Resources.");
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                var asset = AssetDatabase.LoadAssetAtPath<CategoryDatabase>(path);
+
+                if (asset != null && asset.name == DatabaseFileName)
+                {
+                    categoryDatabase = asset;
+                    break;
+                }
+                
             }
+
+            if (categoryDatabase == null)
+            {
+                Debug.LogWarning($"Database not found: CategoryDatabase in folder {CategoryPath}");
+                isLoadedCategoryList = false;
+                return;
+            }
+            isLoadedCategoryList = true;
         }
 
-        private void GenerateCategoryTypeFile()
+        private void SaveCategoryList()
         {
-            if (categoryList == null) return;
-
-            string path = "Assets/Scripts/Enums/CategoryType.cs";
-            Directory.CreateDirectory("Assets/Scripts/Enums");
-
-            using (StreamWriter writer = new StreamWriter(path))
+            EditorUtility.SetDirty(categoryDatabase);
+            SyncCategoryType();
+            ModifyEnumUtility.AddItemTypeToEnum(newCategoryName,EnumPath,EnumName);
+            AssetDatabase.SaveAssets();
+            hasUnsavedChanges=false;
+        }
+        private void SyncCategoryType()
+        {
+            if (categoryDatabase == null)
             {
-                writer.WriteLine("// Auto-generated by CategoryManagerWindow");
-                writer.WriteLine("// Do not edit this file manually.");
-                writer.WriteLine("namespace Enums");
-                writer.WriteLine("{");
-                writer.WriteLine("public enum CategoryType");
-                writer.WriteLine("{");
-
-                for (int i = 0; i < categoryList.categories.Count; i++)
-                {
-                    string safeName = SanitizeName(categoryList.categories[i].name);
-                    if (string.IsNullOrWhiteSpace(safeName)) continue;
-
-                    writer.Write($"    {safeName}");
-                    if (i < categoryList.categories.Count - 1)
-                        writer.WriteLine(",");
-                    else
-                        writer.WriteLine();
-                }
-
-                writer.WriteLine("}");
-                writer.WriteLine("}");
+                Debug.LogWarning("Database is null, cannot sync enum.");
+                return;
             }
+            EnumSyncUtility.SyncCategoryEnumFromDatabase(EnumName, EnumPath, categoryDatabase);
 
             AssetDatabase.Refresh();
-            Debug.Log("✅ CategoryType enum generated successfully.");
+         
         }
-
         private string SanitizeName(string name)
         {
             string clean = name.Replace(" ", "").Replace("-", "").Replace(".", "");

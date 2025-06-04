@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using Databases;
 using Editor.Utilities;
+using Enums;
 using Interfaces;
+using Managers;
 using Models;
 using Models.Data;
 using UnityEditor;
@@ -29,8 +31,17 @@ namespace Editor
         }
         
         private int SelectedItemIndex { get; set; } = 0;
-        /*private string AssetEditorName => GetAssetEditorName();
-        protected abstract string GetAssetEditorName();*/
+        private int  SelectedCategoryKey  => $"AssetName_SelectedCategory".GetHashCode();
+        private CategoryType SelectedCategory
+        {
+            get
+            {
+                int storedValue = EditorPrefs.GetInt(SelectedCategoryKey.ToString());
+                return (CategoryType)storedValue;
+            }
+            set => EditorPrefs.SetInt(SelectedCategoryKey.ToString(), (int)value);
+        }
+
         private string AssetNameKey => $"AssetName_{typeof(TEnum).Name}";
         private string AssetName
         {
@@ -72,7 +83,7 @@ namespace Editor
         {
             EditorGUILayout.BeginVertical("box");
             
-            DrawSectionHeader($"{EditorName} information", new Color(0.2f, 0.5f, 0.8f, 1f));
+            Drawer.DrawSectionHeader($"{EditorName} information", new Color(0.2f, 0.5f, 0.8f, 1f));
             
             EditorGUILayout.EndVertical();
             
@@ -87,7 +98,7 @@ namespace Editor
 
             EditorGUILayout.BeginVertical("box");
             
-            DrawSectionHeader($"{EditorName} Configuration", new Color(0.1f, 0.5f, 0.1f, 1f));
+            Drawer.DrawSectionHeader($"{EditorName} Configuration", new Color(0.1f, 0.5f, 0.1f, 1f));
             
             EditorGUILayout.Space(10);
             
@@ -95,6 +106,10 @@ namespace Editor
             {
                 _resourceRequirements=SourceRequirementPrefs.Load();
                 ResourceRequirementDrawer.Draw(ref _resourceRequirements);
+
+                SelectedCategory = (CategoryType)EditorGUILayout.EnumPopup("Category", SelectedCategory);
+
+                EditorGUILayout.Space();
             }
             DrawEnumButton();
             
@@ -107,27 +122,13 @@ namespace Editor
             EditorGUILayout.Space(10);
 
             EditorGUILayout.BeginVertical("box");
-            DrawSectionHeader($"Delete Existing {EditorName}", new Color(0.8f, 0.1f, 0.1f, 1f));
+            Drawer.DrawSectionHeader($"Delete Existing {EditorName}", new Color(0.8f, 0.1f, 0.1f, 1f));
                 
             DrawDeleteSection();
             EditorGUILayout.EndVertical();
             
         }
-      
-        private void DrawSectionHeader(string sectionTitle, Color headerColor)
-        {
-            var rect = EditorGUILayout.GetControlRect(false, 20);
-            EditorGUI.DrawRect(rect, headerColor);
-            GUIStyle style = new GUIStyle(EditorStyles.boldLabel)
-            {
-                alignment = TextAnchor.MiddleCenter,
-                fontSize = 14,
-                fontStyle = FontStyle.Bold,
-                normal = { textColor = Color.white },
-            };
-            GUI.Label(rect, sectionTitle, style);
-        }
-
+        
         protected virtual void DrawItemFields()
         {
             EditorGUI.BeginChangeCheck();
@@ -163,7 +164,7 @@ namespace Editor
                 else
                 {
                     SyncEnum();
-                    AddItemTypeToEnum(AssetName);
+                    ModifyEnumUtility.AddItemTypeToEnum(AssetName,EnumPath,EnumName);
                     EnumReady = true;
                     EditorUtility.DisplayDialog("Added", $"'{AssetName}' was added to {EnumName} enum.\nYou can now create the {EditorName}.", "OK");
                 }
@@ -181,31 +182,7 @@ namespace Editor
             AssetDatabase.Refresh();
         }
         
-        private void AddItemTypeToEnum(string itemName)
-        {
-            if (!File.Exists(EnumPath))
-            {
-                Debug.LogError("Enum file not found."); return;
-            }
-
-            string[] lines = File.ReadAllLines(EnumPath);
-            if (lines.Any(l => l.Contains(itemName)))
-            {
-                Debug.LogWarning($"Enum already contains {itemName}");
-                return;
-            }
-
-            int insertIndex = Array.FindIndex(lines, l => l.Contains($"enum {EnumName}")) + 2;
-            if (insertIndex < 2)
-            {
-                Debug.LogError($"{EnumName} enum not found."); return;
-            }
-
-            var newLines = lines.ToList();
-            newLines.Insert(insertIndex, $"        {itemName},");
-            File.WriteAllLines(EnumPath, newLines);
-            AssetDatabase.Refresh();
-        }
+        
 
         protected virtual void DrawCreateButton()
         {
@@ -246,22 +223,27 @@ namespace Editor
             GameObject itemObject = new GameObject(AssetName);
             itemObject.AddComponent<SpriteRenderer>().sprite = _displaySprite;
             string prefabPath = $"{PrefabsFolderPath}/{AssetName}.prefab";
-            GameObject prefab = PrefabUtility.SaveAsPrefabAsset(itemObject, prefabPath);
-            Object.DestroyImmediate(itemObject);
+            GameObject prefab = PrefabUtility.SaveAsPrefabAsset(itemObject, prefabPath); 
+            DestroyImmediate(itemObject);
         
-            TData newItem = ScriptableObject.CreateInstance<TData>();
+            TData newItem = CreateInstance<TData>();
+            
             newItem.name = AssetName;
             if (!Enum.TryParse(AssetName, out TEnum itemType))
             {
                 Debug.LogError($"Enum.Parse failed: '{AssetName}' not found in {EnumName} after refresh.");
                 return;
             }
-            newItem.enumType = itemType;
-            newItem.icon = _displaySprite;
-            newItem.prefab = prefab;
+
+            var uniqueId = UniqueIdManager.CreateNewUniqueId();
             if (newItem is CraftableAssetData<TEnum> craftableData && RequiresResourceRequirements)
             {
                craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
+               craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId);
+            }
+            else
+            {
+                newItem.Initialize(prefab,_displaySprite,itemType);
             }
             string assetPath = $"{DataFolderPath}/{AssetName}.asset";
             AssetDatabase.CreateAsset(newItem, assetPath);

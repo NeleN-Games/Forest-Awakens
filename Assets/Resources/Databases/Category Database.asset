@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e758abcb396f48f4382efde28a7fde7b, type: 3}
-  m_Name: CategoryList
+  m_Name: Category Database
   m_EditorClassIdentifier: 
   categories:
-  - name: Base
+  - name: dead
+    icon: {fileID: 21300000, guid: 30710add3d3b3cc4ba1de5d18525c216, type: 3}
+    craftableAssets: []
+  - name: SDF
     icon: {fileID: 21300000, guid: d54114a9768f3914a9c276e1265b0e81, type: 3}
-  - name: engineering
-    icon: {fileID: 21300000, guid: f71fb03f2f093f54b9c948e45f35cc06, type: 3}
+    craftableAssets: []

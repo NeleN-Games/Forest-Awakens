@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using Models;
 using Models.Data;
 using UnityEngine;
 
@@ -13,22 +14,41 @@ namespace Databases
         [SerializeField] protected List<TData> entries = new();
         public List<TData> Entries => entries;
         protected  Dictionary<TEnum, TData> DataDict;
+        protected Dictionary<UniqueId, TData> UniqueIdLookup;
 
         public virtual void Initialize()
         {
             DataDict = new Dictionary<TEnum, TData>();
+            UniqueIdLookup = new Dictionary<UniqueId, TData>();
+
             foreach (var entry in entries)
             {
+                
                 if (entry == null) continue;
 
-                var id = entry.GetID();
-                if (DataDict.ContainsKey(id))
+                var id = entry.GetEnum();
+                if (!DataDict.ContainsKey(id))
+                {
+                    DataDict[id] = entry;
+                }
+                else
                 {
                     Debug.LogWarning($"Duplicate ID {id} in {typeof(TData)}");
-                    continue;
                 }
 
-                DataDict[id] = entry;
+                // Register UniqueId
+                if (entry is CraftableAssetData<TEnum> craftable && craftable.GetUniqueId() != null)
+                {
+                    var uid = craftable.GetUniqueId();
+                    if (!UniqueIdLookup.ContainsKey(uid))
+                    {
+                        UniqueIdLookup[uid] = entry;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Duplicate UniqueId {uid.id} in {typeof(TData)}");
+                    }
+                }
             }
         }
 
@@ -41,6 +61,15 @@ namespace Databases
             return null;
         }
 
+        public TData GetByUniqueId(UniqueId uniqueId)
+        {
+            if (UniqueIdLookup != null && uniqueId != null && UniqueIdLookup.TryGetValue(uniqueId, out var data))
+                return data;
+
+            Debug.LogError($"No data found with UniqueId {uniqueId?.id} in {typeof(TData)}");
+            return null;
+        }
+
         public bool Has(TEnum id)
         {
             return DataDict != null && DataDict.ContainsKey(id);
@@ -50,7 +79,7 @@ namespace Databases
         {
             if (item == null) return false;
 
-            var id = item.GetID();
+            var id = item.GetEnum();
 
             if (DataDict != null && DataDict.ContainsKey(id))
             {

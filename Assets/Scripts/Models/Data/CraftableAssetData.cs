@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Enums;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Models.Data
@@ -7,6 +9,19 @@ namespace Models.Data
         where TEnum : System.Enum
     {
         public List<SourceRequirement> resourceRequirements;
+        public CategoryType categoryType;
+        public UniqueId uniqueId;
+        
+        public virtual UniqueId GetUniqueId()=>uniqueId;
+        public void Initialize(GameObject prefab, Sprite icon, TEnum enumType,
+            List<SourceRequirement> resourceRequirements,CategoryType categoryType, UniqueId uniqueId)
+        {
+            base.Initialize(prefab, icon, enumType);
+            this.resourceRequirements =resourceRequirements;
+            this.categoryType =categoryType;
+            this.uniqueId =uniqueId;
+        }
+
         protected override bool IsValid()
         {
             return base.IsValid() && resourceRequirements != null && resourceRequirements.Count > 0;
