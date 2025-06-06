@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Hud
+namespace Hud.Slots
 {
     public class InventorySlotUI : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     {

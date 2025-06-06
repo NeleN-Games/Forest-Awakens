@@ -13,9 +13,9 @@ namespace Managers
         where TData : CraftableAssetData<TEnum>, ICraftable<TEnum>, IIdentifiable<TEnum>
         where TDatabase : GenericDatabase<TEnum, TData>
     {
-        public Action<CraftCommand<TEnum>, TDatabase> OnCraft;
+        public Action<CraftCommand<TEnum>> OnCraft;
 
-        public TDatabase database;
+        private TDatabase database;
 
         private void Awake()
         {
@@ -28,7 +28,7 @@ namespace Managers
             OnCraft -= Craft;
         }
 
-        private void Craft(CraftCommand<TEnum> command, TDatabase db)
+        private void Craft(CraftCommand<TEnum> command)
         {
             var data = database.Get(command.ID);
             if (data == null)

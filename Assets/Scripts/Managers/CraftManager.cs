@@ -12,12 +12,12 @@ namespace Managers
 
         public void CraftBuilding(BuildingType type)
         {
-            buildingCrafter.OnCraft?.Invoke(new CraftCommand<BuildingType>(type), buildingCrafter.database);
+            buildingCrafter.OnCraft?.Invoke(new CraftCommand<BuildingType>(type));
         }
         
         public void CraftItem(ItemType type)
         {
-            itemCrafter.OnCraft?.Invoke(new CraftCommand<ItemType>(type), itemCrafter.database);
+            itemCrafter.OnCraft?.Invoke(new CraftCommand<ItemType>(type));
         }
     }
 }

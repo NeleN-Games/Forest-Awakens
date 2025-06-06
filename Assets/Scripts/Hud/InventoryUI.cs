@@ -3,6 +3,7 @@ using Databases;
 using DG.Tweening;
 using Enums;
 using Hud;
+using Hud.Slots;
 using Services;
 using TMPro;
 using UnityEngine;

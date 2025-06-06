@@ -41,6 +41,16 @@ namespace Editor
             }
             set => EditorPrefs.SetInt(SelectedCategoryKey.ToString(), (int)value);
         }
+        private int  SelectedAvailabilityKey  => $"AssetName_SelectedAvailability ".GetHashCode();
+        private CraftableAvailabilityState SelectedAvailability
+        {
+            get
+            {
+                int storedValue = EditorPrefs.GetInt(SelectedAvailabilityKey.ToString());
+                return (CraftableAvailabilityState)storedValue;
+            }
+            set => EditorPrefs.SetInt(SelectedAvailabilityKey.ToString(), (int)value);
+        }
 
         private string AssetNameKey => $"AssetName_{typeof(TEnum).Name}";
         private string AssetName
@@ -108,6 +118,7 @@ namespace Editor
                 ResourceRequirementDrawer.Draw(ref _resourceRequirements);
 
                 SelectedCategory = (CategoryType)EditorGUILayout.EnumPopup("Category", SelectedCategory);
+                SelectedAvailability = (CraftableAvailabilityState)EditorGUILayout.EnumPopup("Availability", SelectedAvailability);
 
                 EditorGUILayout.Space();
             }
@@ -234,12 +245,12 @@ namespace Editor
                 Debug.LogError($"Enum.Parse failed: '{AssetName}' not found in {EnumName} after refresh.");
                 return;
             }
-
-            var uniqueId = UniqueIdManager.CreateNewUniqueId();
+            
             if (newItem is CraftableAssetData<TEnum> craftableData && RequiresResourceRequirements)
             {
-               craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
-               craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId);
+                var uniqueId = UniqueIdManager.CreateNewUniqueId();
+                craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
+                craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
             }
             else
             {
