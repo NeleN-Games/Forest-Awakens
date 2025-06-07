@@ -64,6 +64,7 @@ namespace Managers
 
             foreach (var kvp in _categoryLookup)
             {
+                Debug.Log($"kvp{kvp.Key}, kvp values{kvp.Value.Count},kvp values: {kvp.Value[0]}, {kvp.Value[1]}");
                 var filteredList = kvp.Value
                     .FindAll(item => item.craftableAvailabilityState == CraftableAvailabilityState.Available
                                      || item.craftableAvailabilityState == CraftableAvailabilityState.Unavailable);

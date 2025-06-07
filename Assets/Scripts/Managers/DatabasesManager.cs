@@ -1,5 +1,6 @@
 using System.IO;
 using Databases;
+using Models.Scriptable_Objects;
 using UnityEngine;
 
 namespace Managers
@@ -9,6 +10,7 @@ namespace Managers
         public static UniqueIdDatabase uniqueIdDatabase;
         public static ItemDatabase itemDatabase;
         public static BuildingDatabase buildingDatabase;
+        public static CategoryDatabase categoryDatabase;
         public static SourceDatabase sourceDatabase;
 
         public static void LoadDatabases()
@@ -16,6 +18,7 @@ namespace Managers
             itemDatabase = LoadDatabase<ItemDatabase>("Databases/Item Database");
             buildingDatabase = LoadDatabase<BuildingDatabase>("Databases/Building Database");
             sourceDatabase = LoadDatabase<SourceDatabase>("Databases/Source Database");
+            categoryDatabase = LoadDatabase<CategoryDatabase>("Databases/Category Database");
             uniqueIdDatabase = LoadDatabase<UniqueIdDatabase>("Databases/Unique Id Database");
         }
 

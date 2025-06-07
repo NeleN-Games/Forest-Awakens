@@ -10,6 +10,7 @@ namespace Models.Data
     [System.Serializable]
     public class CategoryData
     {
+        public CategoryType type;
         public string name;
         public Sprite icon;
         public List<UniqueId> craftableAssets;

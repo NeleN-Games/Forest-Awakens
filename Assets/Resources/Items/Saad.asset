@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed7eaf3df8a4224d8585cddfdfec876, type: 3}
-  m_Name: Sad
+  m_Name: Saad
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7234751146879063309, guid: df4aa6b46b8cbce488fdd3f96a79a356, type: 3}
+  prefab: {fileID: 3242889060744876522, guid: 385b49ef0943b5e4dac55e3762b91abe, type: 3}
   icon: {fileID: 0}
   enumType: 0
+  resourceRequirements:
+  - sourceType: 1
+    amount: 1
+  categoryType: 1
   uniqueId:
     id: 0
-  resourceRequirements:
-  - sourceType: 0
-    amount: 1
-  categoryType: 0
+  craftableAvailabilityState: 2

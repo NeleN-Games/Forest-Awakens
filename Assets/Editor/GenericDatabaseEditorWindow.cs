@@ -251,6 +251,7 @@ namespace Editor
                 var uniqueId = UniqueIdManager.CreateNewUniqueId();
                 craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
                 craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
+                DatabasesManager.LoadDatabases();
             }
             else
             {

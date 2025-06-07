@@ -18,6 +18,7 @@ namespace Hud
         [SerializeField] private CraftableSlotUI craftableSlotPrefab; 
 
         [SerializeField] private Transform categoriesSlotParent;
+        [SerializeField] private Transform craftableSlotsContainer;
       
         private List<CraftableSlotUI> craftableSlots = new();
         private int _maxCraftableCount = 0;
@@ -66,9 +67,9 @@ namespace Hud
                 int toCreate = itemCount - _maxCraftableCount;
                 for (int i = 0; i < toCreate; i++)
                 {
-                    //var go = Instantiate(craftableSlotPrefab.gameObject, craftableSlotsParent);
-                    //var slot = go.GetComponent<CraftableSlotUI>();
-                   // craftableSlots.Add(slot);
+                    var go = Instantiate(craftableSlotPrefab.gameObject, craftableSlotsContainer);
+                    var slot = go.GetComponent<CraftableSlotUI>();
+                    craftableSlots.Add(slot);
                 }
                 _maxCraftableCount = itemCount;
             }

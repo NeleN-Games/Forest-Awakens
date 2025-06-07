@@ -22,7 +22,7 @@ namespace Hud.Slots
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            OnClicked.Invoke(this);
+            OnClicked?.Invoke(this);
         }
     }
 }
