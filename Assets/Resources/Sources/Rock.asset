@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a052d3bbb48be49a9e1b188238da09, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6605286468631516337, guid: 5d6b3a2c633d96642abdf624f47667ed, type: 3}
+  prefab: {fileID: 7500072839320274410, guid: 5d6b3a2c633d96642abdf624f47667ed, type: 3}
   icon: {fileID: 0}
   enumType: 0

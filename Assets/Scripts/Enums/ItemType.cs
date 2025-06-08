@@ -5,6 +5,5 @@ namespace Enums
     [Serializable]
     public enum ItemType
     {
-        Saad,
     }
 }

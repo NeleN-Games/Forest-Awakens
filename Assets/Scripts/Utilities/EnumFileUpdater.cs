@@ -38,14 +38,14 @@ namespace Utilities
 
             int startInsertIndex = enumStartIndex + 2;
 
-            var enumLines = new List<string>();
-            int i = startInsertIndex;
-            while (i < lines.Count && !lines[i].Trim().StartsWith("}"))
+            int enumEndIndex = startInsertIndex;
+            while (enumEndIndex < lines.Count && !lines[enumEndIndex].Trim().StartsWith("}"))
             {
-                enumLines.Add(lines[i]);
-                i++;
+                enumEndIndex++;
             }
-
+            
+            var enumLines = lines.GetRange(startInsertIndex, enumEndIndex - startInsertIndex);
+            
             var currentEnumMembers = enumLines
                 .Select(line => line.Trim().TrimEnd(',').Trim())
                 .Where(s => !string.IsNullOrEmpty(s))
@@ -73,7 +73,7 @@ namespace Utilities
                 if (!currentEnumMembers.Contains(itemName))
                 {
                     lines.Insert(startInsertIndex, $"        {itemName},");
-                    startInsertIndex++;
+                    enumEndIndex++;
                     modified = true;
                 }
             }

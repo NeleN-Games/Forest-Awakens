@@ -13,6 +13,6 @@ namespace Models.Data
         public CategoryType type;
         public string name;
         public Sprite icon;
-        public List<UniqueId> craftableAssets;
+        public List<UniqueId> uniqueIds;
     }
 }

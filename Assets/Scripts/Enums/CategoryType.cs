@@ -2,7 +2,7 @@ namespace Enums
 {
     public enum CategoryType
     {
-        Dead,
-        SDF,
+        Sdfs,
+        Fghdf,
     }
 }

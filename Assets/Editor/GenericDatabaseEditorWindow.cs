@@ -175,7 +175,7 @@ namespace Editor
                 else
                 {
                     SyncEnum();
-                    ModifyEnumUtility.AddItemTypeToEnum(AssetName,EnumPath,EnumName);
+                    ModifyEnumUtility.AddObjectTypeToEnum(AssetName,EnumPath,EnumName);
                     EnumReady = true;
                     EditorUtility.DisplayDialog("Added", $"'{AssetName}' was added to {EnumName} enum.\nYou can now create the {EditorName}.", "OK");
                 }
@@ -248,10 +248,7 @@ namespace Editor
             
             if (newItem is CraftableAssetData<TEnum> craftableData && RequiresResourceRequirements)
             {
-                var uniqueId = UniqueIdManager.CreateNewUniqueId();
-                craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
-                craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
-                DatabasesManager.LoadDatabases();
+                InitializeCraftableAsset(craftableData,prefab,itemType);
             }
             else
             {
@@ -283,7 +280,16 @@ namespace Editor
             }
         }
 
-      protected virtual void DrawDeleteSection()
+        private void InitializeCraftableAsset(CraftableAssetData<TEnum> craftableData,GameObject prefab,TEnum itemType )
+        {
+            var uniqueId = UniqueIdManager.CreateNewUniqueId();
+            uniqueId.uniqueName = AssetName;
+            craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
+            craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
+            DatabasesManager.LoadDatabases();
+            DatabasesManager.categoryDatabase.AddCraftableObjectToCategory(SelectedCategory,uniqueId);
+        }
+        protected virtual void DrawDeleteSection()
         {
             bool canDelete = _database != null && _database.Entries.Count > 0;
             GUI.enabled = canDelete;
@@ -320,7 +326,7 @@ namespace Editor
             {
                 EditorUtility.SetDirty(_database);
                 RemoveItemTypeFromEnum(source.name);
-                
+                CheckRemoveFromCategory(source);
                 DeleteAssetIfExists(source.prefab);
                 DeleteAssetIfExists(source);
                 
@@ -385,7 +391,16 @@ namespace Editor
                 Debug.LogWarning($"'{objectName}' not found in enum.");
             }
         }
-        
+
+        private void CheckRemoveFromCategory(TData source)
+        {
+            if (source is not CraftableAssetData<TEnum> craftableAssetData) return;
+            
+            DatabasesManager.LoadDatabases();
+            DatabasesManager.categoryDatabase.RemoveCraftableObjectFromCategory(craftableAssetData.categoryType,
+                craftableAssetData.UniqueId);
+            Debug.Log($"{source.name} removed from {craftableAssetData.categoryType} category.");
+        }
         protected virtual void OnEnable()
         {
             LoadAssets();

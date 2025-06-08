@@ -1,7 +1,10 @@
+using Models;
+
 namespace Interfaces
 {
-    public interface ICraftable<TID>
+    public interface ICraftable<out TEnum>
     {
-        TID GetEnum();
+        public UniqueId UniqueId { get; set; }
+        public UniqueId GetUniqueId();
     }
 }

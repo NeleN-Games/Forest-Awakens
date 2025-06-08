@@ -8,7 +8,7 @@ namespace Editor.CategoryTool
 {
     public static class OnlineSpellChecker
     {
-        public static void CheckSpelling(string word, Action<string> onResult)
+        /*public static void CheckSpelling(string word, Action<string> onResult)
         {
             EditorCoroutineUtility.StartCoroutineOwnerless(SendRequest(word, onResult));
         }
@@ -63,6 +63,6 @@ namespace Editor.CategoryTool
         public class Replacement
         {
             public string value;
-        }
+        }*/
     }
 }

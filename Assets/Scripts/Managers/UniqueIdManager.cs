@@ -29,7 +29,6 @@ namespace Managers
             const int max = 99999;
             HashSet<int> usedIds = new HashSet<int>(uniqueIdDatabase.uniqueIds.Select(u => u.id));
 
-            UniqueId uniqueId=new UniqueId();
             int id;
             int maxTries = 1000;
             int attempts = 0;
@@ -54,8 +53,8 @@ namespace Managers
             AssetDatabase.SaveAssets();
 #endif
 
-            Debug.Log($"✅ New Unique ID generated: {uniqueId}");
-            return uniqueId;
+            Debug.Log($"✅ New Unique ID generated: {newUniqueId}");
+            return newUniqueId;
         }
         
         public static CraftableAssetData<System.Enum> FindCraftableByUniqueId(UniqueId id)
@@ -82,7 +81,7 @@ namespace Managers
 
             foreach (var entry in database.Entries)
             {
-                if (entry != null && entry.uniqueId != null && entry.uniqueId.id == id.id)
+                if (entry != null && entry.UniqueId != null && entry.UniqueId.id == id.id)
                     return entry as CraftableAssetData<System.Enum>;
             }
 

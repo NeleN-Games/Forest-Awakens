@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Enums;
+using Models;
 using Models.Data;
 using UnityEngine;
 
@@ -10,14 +12,42 @@ namespace Databases
     {
         public List<CategoryData> categories = new List<CategoryData>();
 
-        public void AddCraftableObjectToCategory(string categoryName,CraftableAssetData<Enum> craftableAsset)
+        public void AddCraftableObjectToCategory(CategoryType categoryType,UniqueId uniqueId)
         {
             foreach (var category in categories)
             {
-                if (category.name != categoryName)
+                Debug.Log(category.type);
+                if (category.type != categoryType)
+                {
+                    Debug.LogError($"Did not find valid category to add category.type : {category.type},   categoryType : {categoryType}");
                     continue;
-                craftableAsset.categoryType = category.type;
-            } 
+                }
+              
+                if (!category.uniqueIds.Contains(uniqueId))
+                    category.uniqueIds.Add(uniqueId);
+                
+                return;
+            }
+            Debug.LogError($"Did not find valid category to add categoryType : {categoryType}");
+        }
+
+        public void RemoveCraftableObjectFromCategory(CategoryType categoryType, UniqueId uniqueId)
+        {
+            foreach (var category in categories)
+            {
+                Debug.Log(category.type);
+                if (category.type != categoryType)
+                {
+                    Debug.LogError($"Did not find valid category to add category.type : {category.type},   categoryType : {categoryType}");
+                    continue;
+                }
+              
+                if (category.uniqueIds.Contains(uniqueId))
+                    category.uniqueIds.Remove(uniqueId);
+                
+                return;
+            }
+            Debug.LogError($"Did not find valid category to add categoryType : {categoryType}");
         }
     }
 }

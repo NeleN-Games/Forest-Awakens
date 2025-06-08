@@ -87,17 +87,15 @@ namespace Editor
                 if (GUILayout.Button("↑", GUILayout.Width(25)) && i > 0)
                 {
                     Swap(i, i - 1);
-                    hasUnsavedChanges = true;
                 }
                 if (GUILayout.Button("↓", GUILayout.Width(25)) && i < categoryDatabase.categories.Count - 1)
                 {
                     Swap(i, i + 1);
-                    hasUnsavedChanges = true;
                 }
                 if (GUILayout.Button("X", GUILayout.Width(25)))
                 {
                     categoryDatabase.categories.RemoveAt(i);
-                    hasUnsavedChanges = true;
+                    SaveCategoryList();
                 }
 
                 EditorGUILayout.EndHorizontal();
@@ -125,7 +123,7 @@ namespace Editor
             EditorGUI.EndDisabledGroup();
             EditorGUILayout.EndVertical();
             EditorGUI.BeginDisabledGroup(string.IsNullOrWhiteSpace(newCategoryName) || newCategoryIcon==null);
-            if (GUILayout.Button("Add Category",GUILayout.Height(35)))
+            if (GUILayout.Button("Sync Enum",GUILayout.Height(35)))
             {
                 
                 if (string.IsNullOrWhiteSpace(newCategoryName))
@@ -134,41 +132,30 @@ namespace Editor
                 }
                 else
                 {
-                    OnlineSpellChecker.CheckSpelling(newCategoryName.Trim(), correctedName =>
+                    
+                    bool exists = categoryDatabase.categories.Exists(c => c.name == newCategoryName);
+                    if (exists)
                     {
-                        if (correctedName != newCategoryName.Trim())
-                        {
-                            Debug.Log($"🔧Correcting name: '{newCategoryName}' → '{correctedName}'");
-                        }
-
-                        bool exists = categoryDatabase.categories.Exists(c => c.name == correctedName);
-                        if (exists)
-                        {
-                            EditorUtility.DisplayDialog("Error", "This name is used before", "Ok");
-                        }
-                        else
-                        {
-                            categoryDatabase.categories.Add(new CategoryData
-                            {
-                                name = correctedName,
-                                icon = newCategoryIcon
-                            });
-                            SyncCategoryType();
-                            EditorUtility.SetDirty(categoryDatabase);
-                            AssetDatabase.SaveAssets();
-                            newCategoryName = "";
-                            newCategoryIcon = null;
-                            EditorApplication.delayCall += () => Repaint();
-                        }
-                    });
+                        EditorUtility.DisplayDialog("Error", "This name is used before", "Ok");
+                    }
+                    else
+                    {                       
+                        SyncCategoryType();
+                        ModifyEnumUtility.AddObjectTypeToEnum(newCategoryName,EnumPath,EnumName);
+                        EditorUtility.SetDirty(categoryDatabase);
+                        AssetDatabase.SaveAssets();
+                        hasUnsavedChanges = true;
+                        EditorApplication.delayCall += Repaint;
+                    }
                 }
             }
             EditorGUI.EndDisabledGroup();
             EditorGUILayout.Space(20);
             if (hasUnsavedChanges)
             {
-                if (GUILayout.Button("Save", redButtonStyle,GUILayout.Height(35)))
+                if (GUILayout.Button("ADD CATEGORY", redButtonStyle,GUILayout.Height(35)))
                 {
+                    AddCategory();
                     SaveCategoryList();
                 }
             }
@@ -176,6 +163,7 @@ namespace Editor
             {
                 if (GUILayout.Button("Save",GUILayout.Height(35)))
                 {
+                    AddCategory();
                     SaveCategoryList();
                 }
             }
@@ -186,6 +174,7 @@ namespace Editor
         private void Swap(int indexA, int indexB)
         {
             (categoryDatabase.categories[indexA], categoryDatabase.categories[indexB]) = (categoryDatabase.categories[indexB], categoryDatabase.categories[indexA]);
+            SaveCategoryList();
             EditorUtility.SetDirty(categoryDatabase);
             AssetDatabase.SaveAssets();
         }
@@ -216,11 +205,21 @@ namespace Editor
             isLoadedCategoryList = true;
         }
 
+        private void AddCategory()
+        {                            
+            var newCategoryType = ModifyEnumUtility.SanitizeName(newCategoryName);
+            categoryDatabase.categories.Add(new CategoryData
+            {
+                name = newCategoryName,
+                icon = newCategoryIcon,
+                type = (CategoryType)Enum.Parse(typeof(CategoryType), newCategoryType)
+            });
+        }
         private void SaveCategoryList()
         {
             EditorUtility.SetDirty(categoryDatabase);
             SyncCategoryType();
-            ModifyEnumUtility.AddItemTypeToEnum(newCategoryName,EnumPath,EnumName);
+            ModifyEnumUtility.AddObjectTypeToEnum(newCategoryName,EnumPath,EnumName);
             AssetDatabase.SaveAssets();
             hasUnsavedChanges=false;
         }
