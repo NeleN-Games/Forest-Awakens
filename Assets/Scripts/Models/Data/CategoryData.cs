@@ -1,18 +1,16 @@
-using System;
 using System.Collections.Generic;
+using Attributes;
 using Enums;
-using Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Models.Data
 {
     [System.Serializable]
     public class CategoryData
     {
-        public CategoryType type;
-        public string name;
+        [ReadOnly] public CategoryType type;
+        [ReadOnly] public string name;
         public Sprite icon;
-        public List<UniqueId> uniqueIds;
+        [ReadOnly]public List<UniqueId> uniqueIds;
     }
 }

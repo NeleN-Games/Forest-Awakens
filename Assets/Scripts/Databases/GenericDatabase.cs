@@ -9,7 +9,7 @@ namespace Databases
 {
     public abstract class GenericDatabase<TEnum, TData> : ScriptableObject,IInitializable
         where TEnum : Enum
-        where TData : CommonAssetData<TEnum>, IIdentifiable<TEnum>
+        where TData : CommonAssetData<TEnum>
     {
         [SerializeField] protected List<TData> entries = new();
         public List<TData> Entries => entries;
@@ -46,7 +46,7 @@ namespace Databases
                     }
                     else
                     {
-                        Debug.LogWarning($"Duplicate UniqueId {uid.id} in {typeof(TData)}");
+                        Debug.LogWarning($"Duplicate UniqueId {uid.ID} in {typeof(TData)}");
                     }
                 }
             }
@@ -66,7 +66,7 @@ namespace Databases
             if (UniqueIdLookup != null && uniqueId != null && UniqueIdLookup.TryGetValue(uniqueId, out var data))
                 return data;
 
-            Debug.LogError($"No data found with UniqueId {uniqueId?.id} in {typeof(TData)}");
+            Debug.LogError($"No data found with UniqueId {uniqueId?.ID} in {typeof(TData)}");
             return null;
         }
 

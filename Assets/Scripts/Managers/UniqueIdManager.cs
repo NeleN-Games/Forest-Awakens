@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Databases;
+using Enums;
+using Helper;
 using Interfaces;
 using Models;
 using Models.Data;
@@ -14,7 +16,7 @@ namespace Managers
     {
         public static UniqueIdDatabase uniqueIdDatabase;
       
-        public static UniqueId CreateNewUniqueId()
+        public static UniqueId CreateNewUniqueId(string uniqueName, CraftableType craftableType)
         {
             DatabasesManager.LoadDatabases();
             uniqueIdDatabase=DatabasesManager.uniqueIdDatabase;
@@ -24,11 +26,23 @@ namespace Managers
                 Debug.LogError("❌ UniqueIdDatabase not loaded. Call LoadDatabases() first.");
                 return null;
             }
+            if (!UniqueIdRanges.Ranges.TryGetValue(craftableType, out var range))
+            {
+                Debug.LogError($"❌ Unknown CraftableType {craftableType}");
+                return null;
+            }
 
-            const int min = 10000;
-            const int max = 99999;
-            HashSet<int> usedIds = new HashSet<int>(uniqueIdDatabase.uniqueIds.Select(u => u.id));
-
+           
+            int min = range.start;
+            int max = range.end;
+            
+            
+            HashSet<int> usedIds = new HashSet<int>(
+                uniqueIdDatabase.uniqueIds
+                    .Where(u => u.GetCraftableType() == craftableType)
+                    .Select(u => u.ID)
+            );
+            
             int id;
             int maxTries = 1000;
             int attempts = 0;
@@ -45,7 +59,7 @@ namespace Managers
             }
             while (usedIds.Contains(id));
 
-            UniqueId newUniqueId = new UniqueId { id = id };
+            UniqueId newUniqueId = new UniqueId(uniqueName, id);
             uniqueIdDatabase.uniqueIds.Add(newUniqueId);
 
 #if UNITY_EDITOR
@@ -60,28 +74,29 @@ namespace Managers
         public static CraftableAssetData<System.Enum> FindCraftableByUniqueId(UniqueId id)
         {
             DatabasesManager.LoadDatabases();
-
-            // Cast to base class with Enum
-            var itemMatch = FindInDatabase<Enums.ItemType, ItemData>(DatabasesManager.itemDatabase, id);
-            if (itemMatch != null)
-                return itemMatch;
-
-            var buildingMatch = FindInDatabase<Enums.BuildingType, BuildingData>(DatabasesManager.buildingDatabase, id);
-            if (buildingMatch != null)
-                return buildingMatch;
-
-            Debug.LogWarning($"❓ No craftable asset found with UniqueId: {id.id}");
-            return null;
+    
+            var type = id.GetCraftableType();
+            switch (type)
+            {
+                case CraftableType.Item:
+                    return FindInDatabase<Enums.ItemType, ItemData>(DatabasesManager.itemDatabase, id);
+                case CraftableType.Building:
+                    return FindInDatabase<Enums.BuildingType, BuildingData>(DatabasesManager.buildingDatabase, id);
+                default:
+                    Debug.LogError($"Craftable type not supported for ID: {id.ID}");
+                    return null;
+            }
+           
         }
         private static CraftableAssetData<System.Enum> FindInDatabase<TEnum, TData>(GenericDatabase<TEnum, TData> database, UniqueId id)
             where TEnum : System.Enum
-            where TData : CraftableAssetData<TEnum>, IIdentifiable<TEnum>
+            where TData : CraftableAssetData<TEnum>
         {
             if (database == null) return null;
 
             foreach (var entry in database.Entries)
             {
-                if (entry != null && entry.UniqueId != null && entry.UniqueId.id == id.id)
+                if (entry != null && entry.UniqueId != null && entry.UniqueId.ID == id.ID)
                     return entry as CraftableAssetData<System.Enum>;
             }
 

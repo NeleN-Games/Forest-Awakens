@@ -4941,8 +4941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd967aa1fc952304da9f74e2a6204189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingCrafter: {fileID: 0}
-  itemCrafter: {fileID: 0}
+  buildingCrafter: {fileID: 2132554370}
+  itemCrafter: {fileID: 2132554369}
 --- !u!114 &2132554369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,6 +4987,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 632794556124603284, guid: 5d6b3a2c633d96642abdf624f47667ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955952430320442573, guid: 5d6b3a2c633d96642abdf624f47667ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6605286468631516337, guid: 5d6b3a2c633d96642abdf624f47667ed, type: 3}
       propertyPath: m_Name
       value: Rock
@@ -5149,6 +5157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3458108907936535474, guid: 230281e07827acb4c9019dc3834b1c8e, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5694112241950093352, guid: 230281e07827acb4c9019dc3834b1c8e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5192,6 +5204,10 @@ PrefabInstance:
     - target: {fileID: 5694112241950093352, guid: 230281e07827acb4c9019dc3834b1c8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192355199955410297, guid: 230281e07827acb4c9019dc3834b1c8e, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8819890343765586873, guid: 230281e07827acb4c9019dc3834b1c8e, type: 3}
       propertyPath: m_Name

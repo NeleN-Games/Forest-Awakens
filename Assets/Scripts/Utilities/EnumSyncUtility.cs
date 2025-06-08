@@ -14,7 +14,7 @@ namespace Utilities
         public static void
             SyncEnumFromDatabase<TEnum, TData,TDatabase>(string enumName, string enumPath, TDatabase database)
             where TEnum : Enum
-            where TData :  CommonAssetData<TEnum>, IIdentifiable<TEnum>
+            where TData :  CommonAssetData<TEnum>
             where TDatabase : GenericDatabase<TEnum, TData>
         {
             
@@ -24,7 +24,7 @@ namespace Utilities
         }
         private static List<string> GetAllItemNamesFromDatabase<TEnum, TData,TDatabase>(TDatabase database)
             where TEnum : Enum
-            where TData :  CommonAssetData<TEnum>, IIdentifiable<TEnum>
+            where TData :  CommonAssetData<TEnum>
             where TDatabase : GenericDatabase<TEnum, TData>
         {
                

@@ -7,7 +7,7 @@ namespace Models.Data
 {
     [CreateAssetMenu(menuName = "Data/Source")]
     [Serializable]
-    public class SourceData : CommonAssetData<SourceType>, IIdentifiable<SourceType>
+    public class SourceData : CommonAssetData<SourceType>
     {
         public override SourceType GetEnum() => enumType;
     }

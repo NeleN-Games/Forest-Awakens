@@ -17,7 +17,7 @@ using Object = UnityEngine.Object;
 namespace Editor
 {
     public abstract class GenericDatabaseEditorWindow<TData, TDatabase, TEnum> : EditorWindow
-        where TData :  CommonAssetData<TEnum>, IIdentifiable<TEnum>
+        where TData :  CommonAssetData<TEnum>
         where TDatabase : GenericDatabase<TEnum,TData>
         where TEnum : struct, Enum
     {
@@ -282,8 +282,15 @@ namespace Editor
 
         private void InitializeCraftableAsset(CraftableAssetData<TEnum> craftableData,GameObject prefab,TEnum itemType )
         {
-            var uniqueId = UniqueIdManager.CreateNewUniqueId();
-            uniqueId.uniqueName = AssetName;
+            CraftableType craftableType;
+            if (typeof(TEnum) == typeof(ItemType))
+                craftableType = CraftableType.Item;
+            else if (typeof(TEnum) == typeof(BuildingType))
+                craftableType = CraftableType.Building;
+            else
+                throw new Exception($"Unsupported enum type {typeof(TEnum)}");
+
+            var uniqueId = UniqueIdManager.CreateNewUniqueId(AssetName,craftableType);
             craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
             craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
             DatabasesManager.LoadDatabases();
@@ -397,9 +404,9 @@ namespace Editor
             if (source is not CraftableAssetData<TEnum> craftableAssetData) return;
             
             DatabasesManager.LoadDatabases();
-            DatabasesManager.categoryDatabase.RemoveCraftableObjectFromCategory(craftableAssetData.categoryType,
+            DatabasesManager.categoryDatabase.RemoveCraftableObjectFromCategory(craftableAssetData.CategoryType,
                 craftableAssetData.UniqueId);
-            Debug.Log($"{source.name} removed from {craftableAssetData.categoryType} category.");
+            Debug.Log($"{source.name} removed from {craftableAssetData.CategoryType} category.");
         }
         protected virtual void OnEnable()
         {

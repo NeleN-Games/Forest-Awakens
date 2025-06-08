@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Databases;
 using Enums;
+using Hud.Slots;
+using Interfaces;
 using Models;
 using Models.Data;
 using UnityEngine;
@@ -10,13 +12,11 @@ namespace Managers
 {
     public class CraftLookupManager : MonoBehaviour
     {
-        private readonly Dictionary<UniqueId, CraftableAssetData<Enum>> _uniqueIdLookup = new();
-        private readonly Dictionary<CategoryType, List<CraftableAssetData<Enum>>> _categoryLookup = new();
-        private readonly Dictionary<CategoryType, List<CraftableAssetData<Enum>>> _availableCategoryLookup = new();
+        private readonly Dictionary<UniqueId, ICraftable> _uniqueIdLookup = new();
+        private readonly Dictionary<CategoryType, List<ICraftable>> _categoryLookup = new();
+        private readonly Dictionary<CategoryType, List<ICraftable>> _availableCategoryLookup = new();
 
         public static CraftLookupManager instance;
-
-
         private void Awake()
         {
             instance ??= this;
@@ -30,33 +30,40 @@ namespace Managers
 
             AddEntries<ItemType, ItemData>(itemDatabase.Entries);
             AddEntries<BuildingType, BuildingData>(buildingDatabase.Entries);
+            Debug.Log($"UniqueId Count: {_uniqueIdLookup.Count}");
+            Debug.Log($"Category Count: {_categoryLookup.Count}");
         }
 
-        private void AddEntries<TEnum, TData>(IEnumerable<TData> entries)
+        private void AddEntries<TEnum, TData>(List<TData> entries)
             where TEnum : Enum
-            where TData : CraftableAssetData<TEnum>
+            where TData : CraftableAssetData<TEnum>,ICraftable
         {
+            Debug.Log($"Added {entries.Count} entries of type {typeof(TData).Name}");
+
             foreach (var entry in entries)
             {
-                var uid = entry.GetUniqueId();
-                if (uid != null && !_uniqueIdLookup.ContainsKey(uid))
-                    _uniqueIdLookup[uid] = entry as CraftableAssetData<Enum>;
+                Debug.Log($"Entry: {entry.name}, UID: {entry.GetUniqueId().UniqueName}, UID, Category: {entry.CategoryType}");
 
-                if (!_categoryLookup.TryGetValue(entry.categoryType, out var list))
+                var uid = entry.GetUniqueId();
+                
+                if (uid != null && !_uniqueIdLookup.ContainsKey(uid))
+                    _uniqueIdLookup[uid] = entry;
+
+                if (!_categoryLookup.TryGetValue(entry.CategoryType, out var list))
                 {
-                    list = new List<CraftableAssetData<Enum>>();
-                    _categoryLookup[entry.categoryType] = list;
+                    list = new List<ICraftable>();
+                    _categoryLookup[entry.CategoryType] = list;
                 }
-                list.Add(entry as CraftableAssetData<Enum>);
+                list.Add(entry);
             }
 
             UpdateAvailableCategoryLookup();
         }
-        public CraftableAssetData<Enum> GetByUniqueId(UniqueId id) =>
+        public ICraftable GetByUniqueId(UniqueId id) =>
             _uniqueIdLookup.GetValueOrDefault(id);
 
-        public List<CraftableAssetData<Enum>> GetByCategory(CategoryType category) =>
-            _categoryLookup.TryGetValue(category, out var list) ? list : new List<CraftableAssetData<Enum>>();
+        public List<ICraftable> GetByCategory(CategoryType category) =>
+            _categoryLookup.TryGetValue(category, out var list) ? list : new List<ICraftable>();
 
         private void UpdateAvailableCategoryLookup()
         {
@@ -66,8 +73,8 @@ namespace Managers
             {
                 Debug.Log($"kvp{kvp.Key}, kvp values{kvp.Value.Count},kvp values: {kvp.Value[0]}, {kvp.Value[1]}");
                 var filteredList = kvp.Value
-                    .FindAll(item => item.craftableAvailabilityState == CraftableAvailabilityState.Available
-                                     || item.craftableAvailabilityState == CraftableAvailabilityState.Unavailable);
+                    .FindAll(item => item.CraftableAvailabilityState  == CraftableAvailabilityState.Available
+                                     || item.CraftableAvailabilityState == CraftableAvailabilityState.Unavailable);
 
                 if (filteredList.Count > 0)
                     _availableCategoryLookup[kvp.Key] = filteredList;

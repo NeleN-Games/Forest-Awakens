@@ -6,23 +6,24 @@ using UnityEngine.Serialization;
 
 namespace Models.Data
 {
-    public abstract class CraftableAssetData<TEnum> : CommonAssetData<TEnum>,ICraftable<BuildingType>
+    public abstract class CraftableAssetData<TEnum> : CommonAssetData<TEnum>,ICraftable
         where TEnum : System.Enum
     {
         public List<SourceRequirement> resourceRequirements;
-        public CategoryType categoryType;
-        public CraftableAvailabilityState craftableAvailabilityState;
         public UniqueId UniqueId { get; set; }
         
         public virtual UniqueId GetUniqueId()=>UniqueId;
+        public CategoryType CategoryType { get; set; }
+        public CraftableAvailabilityState CraftableAvailabilityState { get; set; }
+
         public void Initialize(GameObject prefab, Sprite icon, TEnum enumType,
             List<SourceRequirement> resourceRequirements,CategoryType categoryType, UniqueId uniqueId, CraftableAvailabilityState craftableAvailabilityState)
         {
             base.Initialize(prefab, icon, enumType);
             this.resourceRequirements =resourceRequirements;
-            this.categoryType =categoryType;
+            this.CategoryType =categoryType;
             this.UniqueId =uniqueId;
-            this.craftableAvailabilityState =craftableAvailabilityState;
+            this.CraftableAvailabilityState =craftableAvailabilityState;
         }
 
         protected override bool IsValid()

@@ -1,10 +1,14 @@
+using Enums;
 using Models;
 
 namespace Interfaces
 {
-    public interface ICraftable<out TEnum>
+    public interface ICraftable
     {
         public UniqueId UniqueId { get; set; }
-        public UniqueId GetUniqueId();
+        
+        UniqueId GetUniqueId();
+        CategoryType CategoryType { get; set; }
+        CraftableAvailabilityState CraftableAvailabilityState { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Managers
 {
     public abstract class Crafter<TEnum, TData, TDatabase> : MonoBehaviour
         where TEnum : Enum
-        where TData : CraftableAssetData<TEnum>, IIdentifiable<TEnum>
+        where TData : CraftableAssetData<TEnum>
         where TDatabase : GenericDatabase<TEnum, TData>
     {
         public Action<CraftCommand<TEnum>> OnCraft;

@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eaa2f7fc44174040bcc68ead6c2fbdf, type: 3}
-  m_Name: Item Database
+  m_Script: {fileID: 11500000, guid: fed7eaf3df8a4224d8585cddfdfec876, type: 3}
+  m_Name: Fdfdf
   m_EditorClassIdentifier: 
-  entries:
-  - {fileID: 11400000, guid: bf515f455f2b3c04d91c3c3701741d64, type: 2}
+  prefab: {fileID: 1910070844632353865, guid: e08c5b89827634c49a110e7c28608d83, type: 3}
+  icon: {fileID: 0}
+  enumType: 0
+  resourceRequirements:
+  - sourceType: 0
+    amount: 1
