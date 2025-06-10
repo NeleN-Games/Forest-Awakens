@@ -64,7 +64,7 @@ namespace Systems
             if (!CheckUpdateUI())return;
             
             CharacterStatsUI.Instance.OnHealthChanged?.Invoke(healthStat.CurrentValue,healthStat.MaxValue);
-            Debug.Log("Health changed");
+           // Debug.Log("Health changed");
         }
         private bool CheckUpdateUI()
         {

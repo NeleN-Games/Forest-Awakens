@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Databases;
 using Enums;
 using Hud.Slots;
@@ -11,7 +12,15 @@ using UnityEngine;
 namespace Managers
 {
     public class CraftLookupManager : MonoBehaviour
-    {
+    {       
+        
+        /// <summary>
+        /// Invoked when the availability of craftable objects changes, such as:
+        /// - A new item is discovered in the tech tree.
+        /// - The required resources for crafting become insufficient or sufficient.
+        /// </summary>
+        public Action<Dictionary<CategoryType, List<ICraftable>>> OnChangeCraftableAvailabilityObjects;
+        
         private readonly Dictionary<UniqueId, ICraftable> _uniqueIdLookup = new();
         private readonly Dictionary<CategoryType, List<ICraftable>> _categoryLookup = new();
         private readonly Dictionary<CategoryType, List<ICraftable>> _availableCategoryLookup = new();
@@ -20,6 +29,9 @@ namespace Managers
         private void Awake()
         {
             instance ??= this;
+            
+            OnChangeCraftableAvailabilityObjects+= UpdateAvailableObjects; 
+
         }
 
         public void Initialize(GenericDatabase<ItemType, ItemData> itemDatabase,
@@ -30,20 +42,16 @@ namespace Managers
 
             AddEntries<ItemType, ItemData>(itemDatabase.Entries);
             AddEntries<BuildingType, BuildingData>(buildingDatabase.Entries);
-            Debug.Log($"UniqueId Count: {_uniqueIdLookup.Count}");
-            Debug.Log($"Category Count: {_categoryLookup.Count}");
+           
         }
 
         private void AddEntries<TEnum, TData>(List<TData> entries)
             where TEnum : Enum
             where TData : CraftableAssetData<TEnum>,ICraftable
         {
-            Debug.Log($"Added {entries.Count} entries of type {typeof(TData).Name}");
 
             foreach (var entry in entries)
             {
-                Debug.Log($"Entry: {entry.name}, UID: {entry.GetUniqueId().UniqueName}, UID, Category: {entry.CategoryType}");
-
                 var uid = entry.GetUniqueId();
                 
                 if (uid != null && !_uniqueIdLookup.ContainsKey(uid))
@@ -71,7 +79,6 @@ namespace Managers
 
             foreach (var kvp in _categoryLookup)
             {
-                Debug.Log($"kvp{kvp.Key}, kvp values{kvp.Value.Count},kvp values: {kvp.Value[0]}, {kvp.Value[1]}");
                 var filteredList = kvp.Value
                     .FindAll(item => item.CraftableAvailabilityState  == CraftableAvailabilityState.Available
                                      || item.CraftableAvailabilityState == CraftableAvailabilityState.Unavailable);

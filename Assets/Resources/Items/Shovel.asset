@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c02a0611f1b7d845acedf1b8143545f, type: 3}
-  m_Name: Asfgas
+  m_Script: {fileID: 11500000, guid: fed7eaf3df8a4224d8585cddfdfec876, type: 3}
+  m_Name: Shovel
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3369634250115842759, guid: f8644a14193d14b46aa841d60da14ac9, type: 3}
+  prefab: {fileID: 4791150803510289448, guid: 90f7e4671016d7648a903d6cee5b1b64, type: 3}
   icon: {fileID: 0}
   enumType: 0
   resourceRequirements:
-  - sourceType: 0
-    amount: 1
   - sourceType: 1
-    amount: 5
+    amount: 2
+  - sourceType: 0
+    amount: 4

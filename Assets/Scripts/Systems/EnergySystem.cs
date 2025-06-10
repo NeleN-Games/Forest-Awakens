@@ -65,7 +65,7 @@ namespace Systems
             if (!CheckUpdateUI()) return;
             
             CharacterStatsUI.Instance.OnEnergyChanged?.Invoke(energyStat.CurrentValue,energyStat.MaxValue);
-            Debug.Log("Energy changed");
+           // Debug.Log("Energy changed");
         }
         
         private bool CheckUpdateUI()

@@ -64,7 +64,7 @@ namespace Systems
             if (!CheckUpdateUI()) return;
             
             CharacterStatsUI.Instance.OnHungerChanged?.Invoke(hungerStat.CurrentValue,hungerStat.MaxValue);
-            Debug.Log("Hunger changed");
+          //  Debug.Log("Hunger changed");
         }
 
         private bool CheckUpdateUI()

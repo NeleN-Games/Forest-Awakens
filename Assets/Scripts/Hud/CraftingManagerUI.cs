@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Enums;
 using Hud.Slots;
+using Interfaces;
 using Models.Data;
 using UnityEngine;
 
@@ -9,10 +10,9 @@ namespace Hud
 {
     public class CraftingManagerUI : MonoBehaviour
     {
-        public Action<Dictionary<CategoryType, List<CraftableAssetData<Enum>>>> OnChangeCraftableAvailabilityObjects;
         
         private Dictionary<CategoryType, CategorySlotUI> _categorySlots = new();
-        private Dictionary<CategoryType, List<CraftableAssetData<Enum>>> _availableCraftablesByCategory = new();
+        private Dictionary<CategoryType, List<ICraftable>> _availableCraftablesByCategory = new();
         
         [SerializeField] private CategorySlotUI categorySlotPrefab;
         [SerializeField] private CraftableSlotUI craftableSlotPrefab; 
@@ -22,14 +22,9 @@ namespace Hud
       
         private List<CraftableSlotUI> craftableSlots = new();
         private int _maxCraftableCount = 0;
+        
 
-
-        private void Awake()
-        {
-            OnChangeCraftableAvailabilityObjects+= UpdateAvailableObjects; 
-        }
-
-        private void UpdateAvailableObjects(Dictionary<CategoryType, List<CraftableAssetData<Enum>>> availableCraftableObjects)
+        private void UpdateAvailableObjects(Dictionary<CategoryType, List<ICraftable>> availableCraftableObjects)
         {
             foreach (var kvp in availableCraftableObjects)
             {
