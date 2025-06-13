@@ -2823,6 +2823,10 @@ MonoBehaviour:
   itemDatabase: {fileID: 11400000, guid: d626851842915ac409f473e6a6b14d7d, type: 2}
   buildingDatabase: {fileID: 11400000, guid: 71d8ea30626bb29418d04b34959ad26b, type: 2}
   craftLookupManager: {fileID: 2132554371}
+  playerInventory: {fileID: 1738934267}
+  inventoryUI: {fileID: 176690939}
+  itemCrafter: {fileID: 2132554369}
+  buildingCrafter: {fileID: 2132554370}
 --- !u!4 &1319156154
 Transform:
   m_ObjectHideFlags: 0
@@ -4652,6 +4656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   isTriggerable: 0
+  collectedAmount: 0
   fullTimeToCollect: 5
   sourceAmount: 5
 --- !u!61 &2101331112
