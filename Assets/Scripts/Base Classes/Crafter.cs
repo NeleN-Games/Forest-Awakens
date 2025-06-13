@@ -8,36 +8,30 @@ using UnityEngine;
 
 namespace Managers
 {
-    public abstract class Crafter<TEnum, TData, TDatabase> : MonoBehaviour
+    public abstract class Crafter<TEnum, TData, TDatabase> : MonoBehaviour,IInitializable
         where TEnum : Enum
         where TData : CraftableAssetData<TEnum>
         where TDatabase : GenericDatabase<TEnum, TData>
     {
         public Action<CraftCommand<TEnum>> OnCraft;
 
-        private TDatabase database;
+        protected TDatabase Database;
+        
+        public abstract void Initialize();
 
-        private void Awake()
-        {
-            database = ServiceLocator.Get<TDatabase>();
-            OnCraft += Craft;
-        }
+        public abstract void OnDestroy();
+       
 
-        private void OnDestroy()
+        protected void Craft(CraftCommand<TEnum> command)
         {
-            OnCraft -= Craft;
-        }
-
-        private void Craft(CraftCommand<TEnum> command)
-        {
-            var data = database.Get(command.ID);
+            var data = Database.Get(command.ID);
             if (data == null)
             {
                 OnCraftFailure(null);
                 return;
             }
 
-            if (PlayerInventory.Instance.HasEnoughSources(data.resourceRequirements))
+            if (ServiceLocator.Get<PlayerInventory>().HasEnoughSources(data.GetRequirements()))
             {
                 HandleCraftSuccess(data);
                 OnCraftSuccess(data);
@@ -51,5 +45,6 @@ namespace Managers
         protected abstract void HandleCraftSuccess(TData data);
         protected abstract void OnCraftSuccess(TData data);
         protected abstract void OnCraftFailure(TData data);
+      
     }
 }

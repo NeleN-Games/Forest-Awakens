@@ -10,7 +10,8 @@ namespace Models.Data
         public TEnum enumType;
        
         public abstract TEnum GetEnum();
-        
+
+        public abstract CommonAssetData<TEnum> Clone();
 
         public virtual void Initialize(GameObject prefab, Sprite icon, TEnum enumType)
         {

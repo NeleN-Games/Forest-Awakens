@@ -15,11 +15,13 @@ namespace Base_Classes
       protected bool isTriggerable;
       protected bool IsCollected;
       private Collider2D _collider;
+      [SerializeField]
+      private int collectedAmount;
       public virtual void OnCollect(GameObject collector)
       {
          collector.TryGetComponent(out PlayerInventory playerInventory);
          if (IsCollected) return;
-         playerInventory.AddItem(itemType);
+         playerInventory.AddItem(itemType,collectedAmount);
          IsCollected = true;
          Destroy(gameObject);
       }

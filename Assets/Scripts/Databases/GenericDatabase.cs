@@ -52,6 +52,7 @@ namespace Databases
             }
         }
 
+        public void OnDestroy(){}
         public TData Get(TEnum id)
         {
             if (DataDict != null && DataDict.TryGetValue(id, out var data))

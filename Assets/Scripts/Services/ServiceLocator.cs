@@ -1,39 +1,55 @@
 using System;
 using System.Collections.Generic;
 using Interfaces;
+using UnityEngine;
 
 namespace Services
 {
     public static class ServiceLocator
     {
-        private static readonly Dictionary<Type, object> _services = new();
+        private static readonly List<IInitializable> InitializablesInOrder = new();
 
-        public static void Register<T>(T service)
+        private static readonly Dictionary<Type, IInitializable> InitializablesByType = new();
+        public static void Register<T>(T service) where T : IInitializable
         {
             var type = typeof(T);
-            if (_services.ContainsKey(type))
+            if (InitializablesByType.ContainsKey(type))
                 throw new Exception($"Service of type {type.Name} already registered");
 
-            _services[type] = service;
-            
-            if (service is IInitializable initializable)
+            InitializablesInOrder.Add(service);
+            InitializablesByType[type] = service;
+        }
+        public static void InitializeAll()
+        {          
+
+            foreach (var service in InitializablesInOrder)
             {
-                initializable.Initialize();
+                try
+                {
+                    service.Initialize();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"service initialization error: one or more initialized service of type are missing");
+                    Console.WriteLine(e);
+                    throw;
+                }
+
             }
         }
-
-        public static T Get<T>()
+    
+        public static T Get<T>() where T : class, IInitializable
         {
-            var type = typeof(T);
-            if (_services.TryGetValue(type, out var service))
-                return (T)service;
+            if (InitializablesByType.TryGetValue(typeof(T), out var service))
+                return service as T;
 
-            throw new Exception($"Service of type {type.Name} not registered");
+            throw new Exception($"Service of type {typeof(T).Name} not registered");
         }
+
 
         public static void Clear()
         {
-            _services.Clear();
+            InitializablesInOrder.Clear();
         }
     }
 }

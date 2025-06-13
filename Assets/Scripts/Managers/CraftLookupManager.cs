@@ -7,11 +7,12 @@ using Hud.Slots;
 using Interfaces;
 using Models;
 using Models.Data;
+using Services;
 using UnityEngine;
 
 namespace Managers
 {
-    public class CraftLookupManager : MonoBehaviour
+    public class CraftLookupManager : MonoBehaviour,IInitializable
     {       
         
         /// <summary>
@@ -19,33 +20,132 @@ namespace Managers
         /// - A new item is discovered in the tech tree.
         /// - The required resources for crafting become insufficient or sufficient.
         /// </summary>
-        public Action<Dictionary<CategoryType, List<ICraftable>>> OnChangeCraftableAvailabilityObjects;
+        public Action<SourceType,int> OnSourceAmountChanged;
+
+        /// <summary>
+        /// Invoked when the availability of craftable objects changes, such as:
+        /// - A new item is discovered in the tech tree.
+        /// </summary>
+        public Action<Dictionary<CategoryType, List<ICraftable>>> OnUnlockedCraftableObject;
         
-        private readonly Dictionary<UniqueId, ICraftable> _uniqueIdLookup = new();
-        private readonly Dictionary<CategoryType, List<ICraftable>> _categoryLookup = new();
-        private readonly Dictionary<CategoryType, List<ICraftable>> _availableCategoryLookup = new();
+        private readonly Dictionary<SourceType, List<ICraftable>> craftablesByRequiredSource;
 
-        public static CraftLookupManager instance;
-        private void Awake()
+        private readonly Dictionary<CategoryType, List<ICraftable>> _unlockedCraftable = new();
+        
+        private readonly Dictionary<ICraftable, CraftableSlotUI> CraftableSlotByICraftable;
+
+        private IInventoryService _inventory;
+
+        public void Initialize()
         {
-            instance ??= this;
-            
-            OnChangeCraftableAvailabilityObjects+= UpdateAvailableObjects; 
-
+            _inventory = ServiceLocator.Get<PlayerInventory>();
+            if (_inventory == null)
+                Debug.LogError("Inventory Service is not registered!");
+            OnSourceAmountChanged += UpdateCraftableAvailability;
+            OnUnlockedCraftableObject += UpdateUnlockedCraftableObjects;
+            InitializeDatabases();
         }
 
-        public void Initialize(GenericDatabase<ItemType, ItemData> itemDatabase,
-            GenericDatabase<BuildingType, BuildingData> buildingDatabase)
+        public void OnDestroy()
         {
-            _uniqueIdLookup.Clear();
-            _categoryLookup.Clear();
+            OnSourceAmountChanged -= UpdateCraftableAvailability;
+            OnUnlockedCraftableObject -= UpdateUnlockedCraftableObjects;
+        }
 
-            AddEntries<ItemType, ItemData>(itemDatabase.Entries);
-            AddEntries<BuildingType, BuildingData>(buildingDatabase.Entries);
+        private void InitializeDatabases()
+        {
+            var itemDatabase=ServiceLocator.Get<ItemDatabase>();
+            var buildingDatabase=ServiceLocator.Get<BuildingDatabase>();
+            
+            AddUnlockedEntries<ItemType, ItemData>(itemDatabase.Entries);
+            AddUnlockedEntries<BuildingType, BuildingData>(buildingDatabase.Entries);
            
         }
+        private void AddUnlockedEntries<TEnum, TData>(List<TData> entries)
+            where TEnum : Enum
+            where TData : CraftableAssetData<TEnum>
+        {
 
-        private void AddEntries<TEnum, TData>(List<TData> entries)
+            foreach (var entry in entries)
+            {
+                if (entry.CraftableAvailabilityState == CraftableAvailabilityState.Locked)
+                    continue;
+               
+                if (!_unlockedCraftable.ContainsKey(entry.CategoryType))
+                {
+                    _unlockedCraftable[entry.CategoryType] = new List<ICraftable>();
+                }
+                _unlockedCraftable[entry.CategoryType].Add((TData)entry.Clone());
+                
+                foreach (var sourceRequirement in entry.GetRequirements())
+                {
+                    SourceType sourceType = sourceRequirement.sourceType;
+
+                    if (!craftablesByRequiredSource.ContainsKey(sourceType))
+                    {
+                        craftablesByRequiredSource[sourceType] = new List<ICraftable>();
+                    }
+                    craftablesByRequiredSource[sourceType].Add((TData)entry.Clone());
+                }
+                
+            }
+            
+        }
+
+        private void UpdateUnlockedCraftableObjects(Dictionary<CategoryType, List<ICraftable>> unlockedCraftableObjects)
+        {
+            foreach (var (categoryType, craftables) in unlockedCraftableObjects)
+            {
+                foreach (var craftable in craftables)
+                {
+                    if (craftable.CraftableAvailabilityState != CraftableAvailabilityState.Locked)
+                    {
+                        Debug.Log($"This Craftable: {craftable} is unlocked already");
+                        continue;
+                    }
+
+                    if (!_unlockedCraftable.ContainsKey(categoryType))
+                    {
+                        _unlockedCraftable[categoryType] = new List<ICraftable>();
+                        
+                        // TODO : CREATE NEW CATEGORY SLOT
+                    }
+                    
+                    _unlockedCraftable[categoryType].Add(craftable);
+                    
+                    // TODO : Check availability of craftable objects and set it .
+                }
+            }
+        }
+
+ 
+        private void UpdateCraftableAvailability(SourceType sourceType,int amount)
+        {
+            if (!craftablesByRequiredSource.TryGetValue(sourceType, out var affectedCraftables))
+                return;
+
+            foreach (var craftable in affectedCraftables)
+            {         
+                bool isAvailabilityChanged = craftable.IsAvailabilityChanged(_inventory);
+                if (isAvailabilityChanged)
+                {
+                    ChangeCraftableSlotUIAvailability(craftable,craftable.CraftableAvailabilityState==CraftableAvailabilityState.Available);
+                }
+            }
+        }
+
+        private void ChangeCraftableSlotUIAvailability(ICraftable craftable, bool isAvailable)
+        {
+            if (CraftableSlotByICraftable.ContainsKey(craftable))
+            {
+                CraftableSlotByICraftable[craftable].ChangeAvailability(isAvailable);
+            }
+            else
+            {
+                Debug.LogError($"{nameof(craftable)} is not added to {nameof(CraftableSlotByICraftable)}");
+            }
+        }
+        /*private void AddUnlockedEntries<TEnum, TData>(List<TData> entries)
             where TEnum : Enum
             where TData : CraftableAssetData<TEnum>,ICraftable
         {
@@ -86,6 +186,6 @@ namespace Managers
                 if (filteredList.Count > 0)
                     _availableCategoryLookup[kvp.Key] = filteredList;
             }
-        }
+        }*/
     }
 }

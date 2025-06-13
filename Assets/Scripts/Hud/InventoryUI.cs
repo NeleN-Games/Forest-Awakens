@@ -2,25 +2,16 @@ using System.Collections.Generic;
 using Databases;
 using DG.Tweening;
 using Enums;
-using Hud;
 using Hud.Slots;
+using Interfaces;
 using Services;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Hud
 {
-    public class InventoryUI : MonoBehaviour
+    public class InventoryUI : MonoBehaviour,IInitializable
     {
-        public static InventoryUI Instance;
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-        }
         public RectTransform panel;
         public GameObject slotPrefab;
         public Transform slotParent;
@@ -31,21 +22,16 @@ namespace UI
 
         private bool _isOpen = false;
         private  Vector2 _cashedPanelPosition; 
-        private void Start()
+        public void Initialize()
         {
-            panel.anchoredPosition = new Vector2(-panel.rect.width, 0);
-
-            PlayerInventory.Instance.OnInventoryChanged += RefreshInventory;
-            RefreshInventory(PlayerInventory.Instance.GetInventory());
-            _cashedPanelPosition = new Vector2(-panel.rect.width, 0);
             sourceDatabase=ServiceLocator.Get<SourceDatabase>();
+            RefreshInventory(ServiceLocator.Get<PlayerInventory>().GetInventory());
+            panel.anchoredPosition = new Vector2(-panel.rect.width, 0);
+            _cashedPanelPosition = new Vector2(-panel.rect.width, 0);
         }
 
-        private void OnDisable()
-        {
-            PlayerInventory.Instance.OnInventoryChanged -= RefreshInventory;
-        }
-
+        public void OnDestroy() { }
+        
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
@@ -63,7 +49,7 @@ namespace UI
                 panel.DOAnchorPos(_cashedPanelPosition, 0.5f).SetEase(Ease.InExpo);
         }
 
-        private void RefreshInventory(Dictionary<SourceType, int> inventoryData)
+        public void RefreshInventory(Dictionary<SourceType, int> inventoryData)
         {
             foreach (Transform child in slotParent)
                 Destroy(child.gameObject);
@@ -90,5 +76,7 @@ namespace UI
         {
             tooltipText.gameObject.SetActive(false);
         }
+
+       
     }
 }

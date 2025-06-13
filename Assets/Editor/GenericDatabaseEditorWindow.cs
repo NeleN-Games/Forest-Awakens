@@ -291,7 +291,7 @@ namespace Editor
                 throw new Exception($"Unsupported enum type {typeof(TEnum)}");
 
             var uniqueId = UniqueIdManager.CreateNewUniqueId(AssetName,craftableType);
-            craftableData.resourceRequirements=new List<SourceRequirement>(_resourceRequirements);
+            craftableData.SetRequirements(_resourceRequirements);
             craftableData.Initialize(prefab,_displaySprite,itemType,_resourceRequirements,SelectedCategory,uniqueId,SelectedAvailability);
             DatabasesManager.LoadDatabases();
             DatabasesManager.categoryDatabase.AddCraftableObjectToCategory(SelectedCategory,uniqueId);

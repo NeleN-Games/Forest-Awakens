@@ -10,5 +10,10 @@ namespace Models.Data
     public class SourceData : CommonAssetData<SourceType>
     {
         public override SourceType GetEnum() => enumType;
+        public override CommonAssetData<SourceType> Clone()
+        {
+            return Instantiate(this);
+            
+        }
     }
 }

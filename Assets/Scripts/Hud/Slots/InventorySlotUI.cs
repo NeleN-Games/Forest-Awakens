@@ -2,7 +2,6 @@ using Databases;
 using Enums;
 using Services;
 using TMPro;
-using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -25,12 +24,12 @@ namespace Hud.Slots
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            InventoryUI.Instance.ShowTooltip(ServiceLocator.Get<SourceDatabase>().Get(_sourceType).enumType.ToString(), Input.mousePosition);
+            ServiceLocator.Get<InventoryUI>().ShowTooltip(ServiceLocator.Get<SourceDatabase>().Get(_sourceType).enumType.ToString(), Input.mousePosition);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            InventoryUI.Instance.HideTooltip();
+            ServiceLocator.Get<InventoryUI>().HideTooltip();
         }
     }
 }
